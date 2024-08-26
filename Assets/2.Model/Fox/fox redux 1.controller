@@ -1,0 +1,3114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!91 &9100000
+AnimatorController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: fox redux 1
+  serializedVersion: 5
+  m_AnimatorParameters:
+  - m_Name: move forward
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: move right
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  m_AnimatorLayers:
+  - serializedVersion: 5
+    m_Name: Base Layer
+    m_StateMachine: {fileID: 1107417545546154835}
+    m_Mask: {fileID: 0}
+    m_Motions: []
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+--- !u!114 &114009565755503685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 0.5
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.33
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114023079417961215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114028270950018040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 1
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114029536200508740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 100
+  staminaCostPerSecond: 33
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 1
+  debugName: 
+--- !u!114 &114058274949685820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822766fda5e260b76424875ee978a65d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementID: 33
+--- !u!114 &114075236086373382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.8
+  noDodgeNormalizedDuration: 0.8
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: slash bounceback
+--- !u!114 &114091974553736690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 285994004
+      Data2: 1292381393
+      Data3: 1364788902
+      Data4: -32062599
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events:
+  - normalizedTime: 0
+    fmodEvent:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+  maxAbsTimeDifference: 0
+--- !u!114 &114095585433279575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.7
+  noDodgeNormalizedDuration: 0.7
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.7
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114095659870121647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0
+  noDodgeNormalizedDuration: 0
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 0
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 1
+  staminaBehaviour: 1
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: locomotion
+--- !u!114 &114097709392225185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.25
+  noDodgeNormalizedDuration: 0.5
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.25
+  lockFacingWhilePlaying: 0
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 4
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114111070487178908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.9
+  noDodgeNormalizedDuration: 0.6
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.55
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0.75
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 2
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 5
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: slash 2
+--- !u!114 &114117193365258613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 1488023932
+      Data2: 1110056557
+      Data3: 649556118
+      Data4: -2017242869
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+--- !u!114 &114125068726836251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: Infinity
+  noDodgeNormalizedDuration: 0
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 0
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114133803050009219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.9
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: eating
+--- !u!114 &114136362153993566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 0.5
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.33
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114137572672961666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 253756207
+      Data2: 1304877381
+      Data3: -924477052
+      Data4: 305724053
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+--- !u!114 &114141312369902062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 1
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114186060542903106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114194865920804356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dd6beb1bd35f74ba939f97a7e51e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 1745467790
+      Data2: 1248039709
+      Data3: 1437548679
+      Data4: -2021131827
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+  stopOnCreatureInterrupt: 1
+--- !u!114 &114195791065357506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114202405058552879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.8
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.6
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 1
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: slash 3
+--- !u!114 &114236089553593668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 0
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114244743033710534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: Infinity
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 2
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 125
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114247930789309346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: stagger
+--- !u!114 &114267021600159427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114272310304754942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 1488023932
+      Data2: 1110056557
+      Data3: 649556118
+      Data4: -2017242869
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+--- !u!114 &114282331589944352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 2
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 2
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114300363562228289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events:
+  - normalizedTime: 0
+    fmodEvent:
+      Guid:
+        Data1: -1558017690
+        Data2: 1091108730
+        Data3: -1851744860
+        Data4: -1147820250
+  maxAbsTimeDifference: 0
+--- !u!114 &114314857637557211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.66
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 1
+  staminaBehaviour: 0
+  staminaCostType: 1
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 40
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: roll fwd
+--- !u!114 &114326789121225031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.5
+  noDodgeNormalizedDuration: 0.5
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 1
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114330530454032221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 3.4028235E+38
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 0
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 3
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: "bein' REKT \u2014 PRESS START TO TRY AGAIN"
+--- !u!114 &114344862131025924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b4513565b025f2faf8a274939b0fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events:
+  - normalizedTime: 0.166
+    fmodEvent:
+      Guid:
+        Data1: -2051548873
+        Data2: 1127272673
+        Data3: -1384835452
+        Data4: -2105017280
+  - normalizedTime: 0.66
+    fmodEvent:
+      Guid:
+        Data1: -2051548873
+        Data2: 1127272673
+        Data3: -1384835452
+        Data4: -2105017280
+  maxAbsTimeDifference: 0
+  stopOnCreatureInterrupt: 0
+  playOnDryLand: 0
+  playInWater: 1
+  velocityThreshold: 0
+  mapVelocityToParameter: 1
+  velocityMapMaxiumum: 15
+  velocityMapParameter: fox_speed
+  parameterMaxValue: 15
+  isPlayer: 0
+--- !u!114 &114368610374207867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114370459548557264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 1000348564
+      Data2: 1108576769
+      Data3: -2109430393
+      Data4: -1322571267
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+--- !u!114 &114375915821349341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 1260972786
+      Data2: 1286974458
+      Data3: 1354713748
+      Data4: 1795089264
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+--- !u!114 &114376349018205600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: Infinity
+  noDodgeNormalizedDuration: Infinity
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 2
+  staminaBehaviour: 1
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: climbing
+--- !u!114 &114377879867567196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.5
+  noDodgeNormalizedDuration: 0.5
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.5
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 0
+  staminaBehaviour: 2
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114382448240265532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.67
+  noDodgeNormalizedDuration: 0.7
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.33
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 1
+  staminaBehaviour: 0
+  staminaCostType: 1
+  applyGlobalDodgeCost: 1
+  staminaCostOnEntry: 20
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: roll fwd
+--- !u!114 &114385893594600082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: Infinity
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114392444754647696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: Infinity
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 0
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114409298839406072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.75
+  noDodgeNormalizedDuration: 0.75
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 3
+  turnSpeedAttenuationWhilePlaying: 0.5
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114411462711324215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 0.6
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.44
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0.1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 2
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 8
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: swing stick
+--- !u!114 &114422420621881034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 1
+  debugName: 
+--- !u!114 &114428084975325945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 1
+  debugName: open chest
+--- !u!114 &114470508203672979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 3.4028235E+38
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 0
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 3
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: "bein' REKT \u2014 PRESS START TO TRY AGAIN"
+--- !u!114 &114491543733608440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 0.6
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0.1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 2
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 12
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114495161703698100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b4513565b025f2faf8a274939b0fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events:
+  - normalizedTime: 0.166
+    fmodEvent:
+      Guid:
+        Data1: 731676258
+        Data2: 1163254258
+        Data3: 1759758268
+        Data4: 471591153
+  - normalizedTime: 0.66
+    fmodEvent:
+      Guid:
+        Data1: 731676258
+        Data2: 1163254258
+        Data3: 1759758268
+        Data4: 471591153
+  maxAbsTimeDifference: 0
+  stopOnCreatureInterrupt: 0
+  playOnDryLand: 1
+  playInWater: 0
+  velocityThreshold: 0.1
+  mapVelocityToParameter: 1
+  velocityMapMaxiumum: 15
+  velocityMapParameter: fox_speed
+  parameterMaxValue: 15
+  isPlayer: 1
+--- !u!114 &114514128283262418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dd6beb1bd35f74ba939f97a7e51e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events:
+  - normalizedTime: 0.15
+    fmodEvent:
+      Guid:
+        Data1: 920242609
+        Data2: 1197631345
+        Data3: -2056884094
+        Data4: -519783754
+  maxAbsTimeDifference: 0
+  stopOnCreatureInterrupt: 1
+--- !u!114 &114514636816075750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.6667
+  noDodgeNormalizedDuration: 0.7
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.33
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 1
+  staminaBehaviour: 0
+  staminaCostType: 1
+  applyGlobalDodgeCost: 1
+  staminaCostOnEntry: 20
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: roll fwd
+--- !u!114 &114528811598934435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 0
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114572586872841412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events:
+  - normalizedTime: 0
+    fmodEvent:
+      Guid:
+        Data1: 23599277
+        Data2: 1335203785
+        Data3: -213307512
+        Data4: 1313899795
+  maxAbsTimeDifference: 0
+--- !u!114 &114581627909358217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.9
+  noDodgeNormalizedDuration: 0.8
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.8
+  lockFacingWhilePlaying: 3
+  turnSpeedAttenuationWhilePlaying: 0.1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 1
+  applyGlobalDodgeCost: 1
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 1
+  debugName: 
+--- !u!114 &114598397869036876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 680889851
+      Data2: 1334602028
+      Data3: -1309540436
+      Data4: 1009848599
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+--- !u!114 &114627655678604874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 680889851
+      Data2: 1334602028
+      Data3: -1309540436
+      Data4: 1009848599
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+--- !u!114 &114672118991097713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.8
+  noDodgeNormalizedDuration: 0.8
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114678321149469467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dd6beb1bd35f74ba939f97a7e51e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: -595529159
+      Data2: 1165738703
+      Data3: -1342626896
+      Data4: -1775719968
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+  stopOnCreatureInterrupt: 1
+--- !u!114 &114695050871439028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb700fc6bb53d6efc67c9a7949dead53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events:
+  - normalizedTime: 0.166
+    fmodEvent:
+      Guid:
+        Data1: 1613511355
+        Data2: 1240587070
+        Data3: 899302813
+        Data4: -1265505340
+  - normalizedTime: 0.6666
+    fmodEvent:
+      Guid:
+        Data1: 1613511355
+        Data2: 1240587070
+        Data3: 899302813
+        Data4: -1265505340
+  maxAbsTimeDifference: 0
+  velocityThreshold: 0.1
+--- !u!114 &114697079800957839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: Infinity
+  noDodgeNormalizedDuration: Infinity
+  allowItemInputs: 0
+  noItemsNormalizedDuration: Infinity
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114710949585329284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: -759590237
+      Data2: 1220064571
+      Data3: 691958940
+      Data4: 1616816785
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+--- !u!114 &114714196649923637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: Infinity
+  noDodgeNormalizedDuration: Infinity
+  allowItemInputs: 0
+  noItemsNormalizedDuration: Infinity
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 2
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: offering
+--- !u!114 &114727048351565473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.125
+  noDodgeNormalizedDuration: 0.5
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 1
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: gettin' REKT
+--- !u!114 &114736362976674972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: Infinity
+  noDodgeNormalizedDuration: 0
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 3
+  turnSpeedAttenuationWhilePlaying: 0.66
+  groundingTechnique: 1
+  staminaBehaviour: 2
+  staminaCostType: 1
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: sprinting
+--- !u!114 &114737259688220992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: Infinity
+  noDodgeNormalizedDuration: Infinity
+  allowItemInputs: 0
+  noItemsNormalizedDuration: Infinity
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114740312839027744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.8
+  noDodgeNormalizedDuration: 0.4
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.4
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 2
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 5
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: slash 3
+--- !u!114 &114766973854543714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.85
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.8
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 2
+  staminaBehaviour: 1
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114785502605007850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.5
+  noDodgeNormalizedDuration: 0.5
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114789336089423106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 104931380
+      Data2: 1277697704
+      Data3: 1601149591
+      Data4: -848559731
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events:
+  - normalizedTime: 0
+    fmodEvent:
+      Guid:
+        Data1: 0
+        Data2: 0
+        Data3: 0
+        Data4: 0
+  maxAbsTimeDifference: 0
+--- !u!114 &114798028984567871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.66
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 2
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: wave
+--- !u!114 &114800503405208359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 0
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114802167951408187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 2
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 2
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: throwing dart
+--- !u!114 &114836868278504115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 1
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 2
+  staminaBehaviour: 1
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114841418998012066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: Infinity
+  noDodgeNormalizedDuration: Infinity
+  allowItemInputs: 0
+  noItemsNormalizedDuration: Infinity
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: shared
+--- !u!114 &114843179317607151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: Infinity
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: teleport
+--- !u!114 &114846698740239025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.75
+  noDodgeNormalizedDuration: 0.75
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 3
+  turnSpeedAttenuationWhilePlaying: 0.5
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114847882221374480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 0.8
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114849356492890548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 1312447373
+      Data2: 1288659058
+      Data3: 458789550
+      Data4: -1999422350
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events:
+  - normalizedTime: 0.35
+    fmodEvent:
+      Guid:
+        Data1: -1205747816
+        Data2: 1305226946
+        Data3: 94438842
+        Data4: -1201439296
+  maxAbsTimeDifference: 0
+--- !u!114 &114859356604619003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 0.2
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.4
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 0
+  staminaBehaviour: 1
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: get up from stagger
+--- !u!114 &114865475617493956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dd6beb1bd35f74ba939f97a7e51e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: -404342850
+      Data2: 1295786190
+      Data3: -360317296
+      Data4: 508586041
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+  stopOnCreatureInterrupt: 0
+--- !u!114 &114879473315025585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events:
+  - normalizedTime: 0.004
+    fmodEvent:
+      Guid:
+        Data1: -1374248897
+        Data2: 1323969019
+        Data3: 2062253959
+        Data4: -592419125
+  maxAbsTimeDifference: 0
+--- !u!114 &114880047756279921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 506278525
+      Data2: 1281740668
+      Data3: -667186024
+      Data4: 212811898
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+--- !u!114 &114893460462501095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events:
+  - normalizedTime: 0.37
+    fmodEvent:
+      Guid:
+        Data1: -1205747816
+        Data2: 1305226946
+        Data3: 94438842
+        Data4: -1201439296
+  maxAbsTimeDifference: 0
+--- !u!114 &114902507353794110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: -1441208738
+      Data2: 1229703564
+      Data3: 1460959933
+      Data4: 196418778
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+--- !u!114 &114905220645524558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 495955605
+      Data2: 1300100064
+      Data3: -524013126
+      Data4: -1262364801
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+--- !u!114 &114906578148344498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: -1686594404
+      Data2: 1223955260
+      Data3: 1915285160
+      Data4: -77281611
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+--- !u!114 &114910927531553487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 1
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: falling
+--- !u!114 &114914670217325023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: Infinity
+  noDodgeNormalizedDuration: Infinity
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 2
+  staminaBehaviour: 1
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114928082162575525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 100
+  staminaCostPerSecond: 33
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 1
+  debugName: 
+--- !u!114 &114929427006367824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.75
+  noDodgeNormalizedDuration: 0.75
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.75
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 1
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114938835198171725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9067a46e63bdf6e86d3f4a4032c79cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 333905034
+      Data2: 1076411770
+      Data3: -1582139490
+      Data4: 1886404653
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+  stopOnCreatureInterrupt: 1
+--- !u!114 &114951798456491962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.9
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114953855604495332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.95
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 2
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 25
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: slash (shield up)
+--- !u!114 &114956923796839598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.5
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 2
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: shoot
+--- !u!114 &114962477503896625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: -675112052
+      Data2: 1240419139
+      Data3: -447138147
+      Data4: 1953569971
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+--- !u!114 &114965032806085666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dd6beb1bd35f74ba939f97a7e51e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: -1357753155
+      Data2: 1230630922
+      Data3: 1583924158
+      Data4: -1702785089
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events: []
+  maxAbsTimeDifference: 0
+  stopOnCreatureInterrupt: 0
+--- !u!114 &114978177446571205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114985008462449002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b4513565b025f2faf8a274939b0fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events:
+  - normalizedTime: 0.16
+    fmodEvent:
+      Guid:
+        Data1: 731676258
+        Data2: 1163254258
+        Data3: 1759758268
+        Data4: 471591153
+  - normalizedTime: 0.6666
+    fmodEvent:
+      Guid:
+        Data1: 731676258
+        Data2: 1163254258
+        Data3: 1759758268
+        Data4: 471591153
+  maxAbsTimeDifference: 0
+  stopOnCreatureInterrupt: 0
+  playOnDryLand: 1
+  playInWater: 0
+  velocityThreshold: 0.1
+  mapVelocityToParameter: 1
+  velocityMapMaxiumum: 15
+  velocityMapParameter: fox_speed
+  parameterMaxValue: 15
+  isPlayer: 1
+--- !u!114 &114988875806362010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.75
+  noDodgeNormalizedDuration: 0.75
+  allowItemInputs: 0
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0.5
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!114 &114995223563343297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b585a157d604d52f6029f1ca644dfec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtAnimatorsPosition: 1
+  playOnEnter:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  loopWhileInState:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+  events:
+  - normalizedTime: 0
+    fmodEvent:
+      Guid:
+        Data1: 333905034
+        Data2: 1076411770
+        Data3: -1582139490
+        Data4: 1886404653
+  maxAbsTimeDifference: 0
+--- !u!114 &114997088629656699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 0.8
+  noDodgeNormalizedDuration: 0.5
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0.33
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 0.5
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 2
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 5
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 1
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: slash
+--- !u!114 &114999847802031442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4789dbfec254f078fd6c8c2b18fda17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busyNormalizedDuration: 1
+  noDodgeNormalizedDuration: 1
+  allowItemInputs: 1
+  noItemsNormalizedDuration: 0
+  lockFacingWhilePlaying: 1
+  turnSpeedAttenuationWhilePlaying: 1
+  groundingTechnique: 0
+  staminaBehaviour: 0
+  staminaCostType: 0
+  applyGlobalDodgeCost: 0
+  staminaCostOnEntry: 0
+  staminaCostPerSecond: 0
+  instantlyFaceMoveStickDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnEnter: 0
+  instantlyFaceDesiredLookDirectionOnExit: 0
+  alwaysFlinchWhenHit: 0
+  debugName: 
+--- !u!206 &206873574323443252
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Blend Tree
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: -4097829709494022113, guid: 87620ce9977433f41b59b6bc46cdffb4, type: 3}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: 
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: -8058695594074897400, guid: 87620ce9977433f41b59b6bc46cdffb4, type: 3}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 1}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: 
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 8318144932890619901, guid: 87620ce9977433f41b59b6bc46cdffb4, type: 3}
+    m_Threshold: 0
+    m_Position: {x: -1, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: 
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 3864806541472095780, guid: 87620ce9977433f41b59b6bc46cdffb4, type: 3}
+    m_Threshold: 0
+    m_Position: {x: 1, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: 
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 2873486292918231443, guid: 87620ce9977433f41b59b6bc46cdffb4, type: 3}
+    m_Threshold: 0
+    m_Position: {x: 0, y: -1}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: 
+    m_Mirror: 0
+  m_BlendParameter: move right
+  m_BlendParameterY: move forward
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 0
+  m_NormalizedBlendValues: 0
+  m_BlendType: 1
+--- !u!1102 &1102834630148739109
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Locomotion
+  m_Speed: 1.33
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 0, y: 0, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 206873574323443252}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1107 &1107417545546154835
+AnimatorStateMachine:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Base Layer
+  m_ChildStates:
+  - serializedVersion: 1
+    m_State: {fileID: 1102834630148739109}
+    m_Position: {x: 10, y: 70, z: 0}
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 0, y: -250, z: 0}
+  m_EntryPosition: {x: -210, y: 70, z: 0}
+  m_ExitPosition: {x: -270, y: -240, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 1102834630148739109}
