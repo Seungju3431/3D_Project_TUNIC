@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: foxgod rain preview (shockwave)
+  m_Shader: {fileID: 4800000, guid: 5c6ac0ea3b050604199e2b63bedb4260, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _node_556:
+        m_Texture: {fileID: 2800000, guid: 4d4eee386aa1d6144a21d82530d9a6c4, type: 3}
+        m_Scale: {x: 1, y: 1.95}
+        m_Offset: {x: 0, y: -0.34}
+      _tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 4, y: 0.5}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _fade: 0.275
+      _radialScale: -0.28
+    m_Colors:
+      _Color: {r: 1.4980392, g: 0, b: 1.3019608, a: 1}
+      _cutoffcolour: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
+      _node_5654: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+      _scrollspeed: {r: 0.01, g: 1, b: -0.01, a: 0.78}
+      _texScale: {r: 1, g: 1, b: 0.25, a: 0.75}
+  m_BuildTextureStacks: []

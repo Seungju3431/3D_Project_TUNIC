@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Forge_librarian arc attack
+  m_Shader: {fileID: 4800000, guid: 1e8fb286003fb294291dc8620d9d04ac, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _caustictex:
+        m_Texture: {fileID: 2800000, guid: 5a5e70235dfb07f4686d07e91a087686, type: 3}
+        m_Scale: {x: 0.25, y: 0.25}
+        m_Offset: {x: 0, y: 0}
+      _ramp:
+        m_Texture: {fileID: 2800000, guid: 23b57e90ae7a8b346ba5113a0aa5c89c, type: 3}
+        m_Scale: {x: 3.56, y: 1}
+        m_Offset: {x: -0.36, y: 0}
+    m_Floats:
+      _Cutoff: 0.5
+      _boost: 0.181
+      _node_1431: 16
+      _node_8052: 1.25
+      _texscalefactor: 1.25
+    m_Colors:
+      _node_1521: {r: 0, g: 0.2605708, b: 1, a: 1}
+      _node_1521_copy: {r: 1, g: 1, b: 1, a: 1}
+      _node_3938: {r: 2.8686192, g: 1.405038, b: 11.181761, a: 1}
+  m_BuildTextureStacks: []

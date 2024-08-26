@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Forge_foxgod sword phase 2
+  m_Shader: {fileID: 4800000, guid: 667ea24a65b10ce4ba9d7f8701b5158b, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _edgetexture:
+        m_Texture: {fileID: 2800000, guid: 0ca1b120854eda341a08fe55a7ff27e2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _emission:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 0.125, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _interior:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _Cutoff: 0.5
+      _cutoff: 0.5
+      _dotPower: 8
+      _interiorScale: 1
+      _outlineboost: 16
+      _outlinespeed: 0
+      _outlinewidth: 0.06
+      _vertexoffset: 0
+    m_Colors:
+      _emitcolour: {r: 33.719288, g: 15.262415, b: 33.89676, a: 1}
+      _glowcolour: {r: 10.380904, g: 0.50866455, b: 2.4831154, a: 1}
+      _noisecolour: {r: 0.5619831, g: 0, b: 1, a: 1}
+      _outlinecolour: {r: 0.67986614, g: 0.07609467, b: 0.8490566, a: 1}
+      _scrollspeed: {r: -1.23, g: -0.44, b: -2.22, a: -0.044}
+      _texScale: {r: 2, g: 2, b: 2, a: 1}
+  m_BuildTextureStacks: []

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voidwing dark phase
+  m_Shader: {fileID: 4800000, guid: 4b0a2b0bb4c8205439f4646c68b1de52, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _appearancemask:
+        m_Texture: {fileID: 2800000, guid: 5be5dfec059c6fd4d822fb16fea1fbcf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _clouds:
+        m_Texture: {fileID: 2800000, guid: 67520593d99fd774bacbbd0cb61d4fcc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _mask:
+        m_Texture: {fileID: 2800000, guid: 4d8c3efdc94abed46ba227bc87ca31c1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _wingglow:
+        m_Texture: {fileID: 2800000, guid: fb1e18eba5728144a8f2eac5b8808789, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _wingtex:
+        m_Texture: {fileID: 2800000, guid: d508c8ca1314c614f931cd07322ad043, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _: 3
+      _appearance: 1
+      _colourscale: 6
+      _factor: 13.2
+      _node_1874: 10
+      _node_914: 0.3058393
+      _node_9760: 1.03
+      _node_appearance: -1
+      _rootdensity: 8
+    m_Colors:
+      _colour: {r: 1, g: 0.44300002, b: 0.44300002, a: 1}
+      _node_2202: {r: 0.22075202, g: 0.24786375, b: 0.37800002, a: 1}
+      _node_2739: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_BuildTextureStacks: []

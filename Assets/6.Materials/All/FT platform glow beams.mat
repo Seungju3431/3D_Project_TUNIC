@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FT platform glow beams
+  m_Shader: {fileID: 4800000, guid: cdda2da5c7aca674b8dce850ef7fee5c, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _node_1157:
+        m_Texture: {fileID: 2800000, guid: 5a5e70235dfb07f4686d07e91a087686, type: 3}
+        m_Scale: {x: 0.25, y: 0.25}
+        m_Offset: {x: 0, y: 0}
+      _node_6366:
+        m_Texture: {fileID: 2800000, guid: 5a5e70235dfb07f4686d07e91a087686, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _BlendOp: 0
+      _BumpScale: 1
+      _CameraFadingEnabled: 0
+      _CameraFarFadeDistance: 2
+      _CameraNearFadeDistance: 1
+      _Cull: 2
+      _Cutoff: 0.5
+      _DetailNormalMapScale: 1
+      _DistortionBlend: 0.5
+      _DistortionEnabled: 0
+      _DistortionStrength: 1
+      _DistortionStrengthScaled: 0
+      _DstBlend: 0
+      _EmissionEnabled: 0
+      _FlipbookMode: 0
+      _GlossMapScale: 1
+      _Glossiness: 0.534
+      _GlossyReflections: 1
+      _LightingEnabled: 1
+      _Metallic: 0
+      _Mode: 0
+      _OcclusionStrength: 1
+      _Parallax: 0.02
+      _SmoothnessTextureChannel: 0
+      _SoftParticlesEnabled: 0
+      _SoftParticlesFarFadeDistance: 1
+      _SoftParticlesNearFadeDistance: 0
+      _SpecularHighlights: 1
+      _SrcBlend: 1
+      _UVSec: 0
+      _ZWrite: 1
+      _cutoff: 0.026
+      _exposure: 1
+      _heightclip: 6.97
+      _heightclipwidth: 1
+      _shadowfringe: 11.61
+      _softparticle: 18.64
+    m_Colors:
+      _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
+      _Color: {r: 0.2508153, g: 0.2441705, b: 0.2924528, a: 1}
+      _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+      _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
+      _SpecColor: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
+      _TintColor: {r: 1.0461416, g: 3.8041513, b: 9.082411, a: 1}
+      _causticscales: {r: 0.125, g: 0.125, b: 1, a: 1}
+      _causticscrollspeeds: {r: 0.25, g: -0.25, b: -0.124, a: -0.55}
+      _colour: {r: 0.023775948, g: 0.28531137, b: 0.42796704, a: 1}
+  m_BuildTextureStacks: []

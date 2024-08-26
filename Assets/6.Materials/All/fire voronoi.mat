@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: fire voronoi
+  m_Shader: {fileID: 4800000, guid: 07e4cc6e2e63e7940910b229f2ead0a7, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _mask:
+        m_Texture: {fileID: 2800000, guid: 029f2e3d36d5c3649ac102ec7c03b4c4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _noise:
+        m_Texture: {fileID: 2800000, guid: f755c4833fb8d0347a04d92d44393382, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _Cutoff: 0.5
+      _depth: -2
+    m_Colors:
+      _TintColor: {r: 1.5571346, g: 0.4320845, b: 0, a: 1}
+      _data: {r: -0.125, g: -1, b: 0, a: 0}
+  m_BuildTextureStacks: []

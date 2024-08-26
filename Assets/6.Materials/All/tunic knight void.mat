@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: tunic knight void
+  m_Shader: {fileID: 4800000, guid: 667ea24a65b10ce4ba9d7f8701b5158b, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _edgetexture:
+        m_Texture: {fileID: 2800000, guid: 6febb4c3e3ba1c54b87ed2d5bc4f207e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 3.5, y: 0}
+      _emission:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _interior:
+        m_Texture: {fileID: 2800000, guid: c90da61a620773f4790f0f3c32e91275, type: 3}
+        m_Scale: {x: 0.0625, y: 0.0625}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _Cutoff: 0.5
+      _cutoff: 0.37
+      _dotPower: 4
+      _interiorScale: 16
+      _node_2811: 64
+      _node_3476: 32
+      _node_3519: 0.02
+      _node_4559: 0.0592
+      _node_6459: 8
+      _node_8464: 1
+      _node_8825: 16
+      _node_9229: 1
+      _outlineboost: 3
+      _outlinespeed: 1
+      _outlinewidth: 0.044
+      _vertexoffset: 0.03
+    m_Colors:
+      _Color: {r: 0, g: 0, b: 0, a: 1}
+      _emitcolour: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+      _node_3440: {r: 1, g: 1, b: 1, a: 1}
+      _outlinecolour: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

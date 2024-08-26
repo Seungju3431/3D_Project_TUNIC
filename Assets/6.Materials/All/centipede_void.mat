@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: centipede_void
+  m_Shader: {fileID: 4800000, guid: 667ea24a65b10ce4ba9d7f8701b5158b, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _edgetexture:
+        m_Texture: {fileID: 2800000, guid: 990def6a8676d5c4ca4cb24cd2acc49a, type: 3}
+        m_Scale: {x: 0.11111111, y: 0.11111111}
+        m_Offset: {x: 0, y: 0}
+      _emission:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _interior:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 0.0625, y: 0.0625}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _Cutoff: 0.5
+      _cutoff: 0.5
+      _dotPower: 0
+      _interiorScale: -10
+      _node_2811: 64
+      _node_3476: 32
+      _node_3519: 0.02
+      _node_4559: 0.0592
+      _node_6459: 8
+      _node_8464: 1
+      _node_8825: 16
+      _node_9229: 1
+      _outlineboost: 4.14
+      _outlinespeed: 0
+      _outlinewidth: 0.05
+      _vertexoffset: 0
+    m_Colors:
+      _Color: {r: 0, g: 0, b: 0, a: 1}
+      _emitcolour: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+      _node_3440: {r: 1, g: 1, b: 1, a: 1}
+      _outlinecolour: {r: 0.59385985, g: 0.14699996, b: 1, a: 1}
+  m_BuildTextureStacks: []

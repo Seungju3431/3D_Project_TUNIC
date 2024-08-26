@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: quarry orthofog bottom
+  m_Shader: {fileID: 4800000, guid: ce47f47cc5354dd4a8c059f025e5f9ca, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _colour_density:
+        m_Texture: {fileID: 2800000, guid: 0ca1b120854eda341a08fe55a7ff27e2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _Cutoff: 0.5
+      _cameradepth: 100
+      _closefade: 4
+      _density: 96.83
+      _depthexp: -0.02
+      _distance: 0.77
+      _exp: 71.2
+      _farclip: 100
+      _fogdensity: 164.3
+      _node_181: 47.26
+      _node_2155: 16
+      _node_7637: 100
+    m_Colors:
+      _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+      _fogcolour: {r: 0.30291027, g: 0.29957277, b: 0.33962262, a: 1}
+      _node_7256: {r: 0.4493644, g: 0.49644068, b: 0.505, a: 0.5882353}
+      _scrollspeed: {r: -0.01, g: -0.01, b: 0.0025, a: 0.01}
+      _texScale: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

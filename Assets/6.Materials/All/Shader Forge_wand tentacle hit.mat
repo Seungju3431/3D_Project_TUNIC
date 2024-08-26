@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Forge_wand tentacle hit
+  m_Shader: {fileID: 4800000, guid: a1201f7d87be5d74f90af09bdb168509, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: {}
+    m_Floats:
+      _Cutoff: 0.5
+      _colouredge: 0.389
+      _vertexcolourcutoff: 0
+    m_Colors:
+      _colour1: {r: 2.0392158, g: 0.4862745, b: 2.9960785, a: 1}
+      _colour2: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []

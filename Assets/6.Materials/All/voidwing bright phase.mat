@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voidwing bright phase
+  m_Shader: {fileID: 4800000, guid: 61dc5d28d4ba5714dbd5197c6e5a6507, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _CutoffNoise:
+        m_Texture: {fileID: 2800000, guid: 987422b8019044341a69c49ba05f147b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _CutoffTexture:
+        m_Texture: {fileID: 2800000, guid: 79ef521d02cbffb4c8fc878387197332, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _WingTex:
+        m_Texture: {fileID: 2800000, guid: 7c8c3a78f929aeb40a94eb701e48316b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _: 3
+      _Appearance: 1
+      _ColourScale: 1
+      _CutoffNoiseScrollSpeed: 0.05
+      _CutoffTexureNoiseAmount: 0
+      _appearance: -0.219
+      _colourscale: -5.37
+      _factor: 13.2
+      _node_1874: 10
+      _node_1939: 0
+      _node_914: 0.3058393
+      _node_9740: 1
+      _node_9760: 1.03
+      _node_appearance: -1
+      _rootdensity: 8
+    m_Colors:
+      _Colour: {r: 0.16176468, g: 0.7572008, b: 1, a: 1}
+      _colour: {r: 1, g: 0.44300002, b: 0.44300002, a: 1}
+      _node_2202: {r: 0.22075202, g: 0.24786375, b: 0.37800002, a: 1}
+      _node_2739: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_BuildTextureStacks: []

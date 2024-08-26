@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 2018 Tile with Snow for props
+  m_Shader: {fileID: 4800000, guid: ff8e727f32e7f834996ad9f956ea40a6, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 96f62fc30b41eb74abb4bbcdea264c36, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _Detail:
+        m_Texture: {fileID: 2800000, guid: 2129f46d1e00f394089ad4422027e407, type: 3}
+        m_Scale: {x: 16, y: 16}
+        m_Offset: {x: 0, y: 0}
+      _MainTex:
+        m_Texture: {fileID: 2800000, guid: e9e93c095e47fc648abe0e33b709b274, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 5}
+      _MossAlbedo:
+        m_Texture: {fileID: 2800000, guid: f87c28a537f652840a647a87ff102b1f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _MossNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 16, y: 16}
+        m_Offset: {x: 0, y: 0}
+      _Specular:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _SpecularMoss:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 16, y: 16}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _Gloss: 0
+      _Metallic: 0
+      _Smoothness: 0
+      _colourasnormal: 1
+      _lerp: 1
+      _paintedmoss: 0
+      _upnormalmoss: 2
+    m_Colors:
+      _Color: {r: 0.93262744, g: 0.94, b: 0.858902, a: 1}
+      _MossColor: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
+  m_BuildTextureStacks: []

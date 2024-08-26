@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Questagon blackness shader (3) B
+  m_Shader: {fileID: 4800000, guid: c2d615d11114f8641ac7cb36fdbe3bdf, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _outlinenoise:
+        m_Texture: {fileID: 2800000, guid: c5175e68a0c4b2c42a9e54c6d30d9dbf, type: 3}
+        m_Scale: {x: 2, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _2ndUVscale: 0.5
+      _outlinespeed: 1
+      _outlinespikewidth: 1
+      _outlinewidth: 0.05
+      _outlinewidthpower: 1
+    m_Colors:
+      _node_726: {r: 0.36912826, g: 0.5596464, b: 2.274307, a: 1}
+  m_BuildTextureStacks: []

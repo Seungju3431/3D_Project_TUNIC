@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: lantern crackle
+  m_Shader: {fileID: 4800000, guid: 5674fc3e7359b5340b81c631aac22160, type: 3}
+  m_ShaderKeywords: _ALPHABLEND_ON _EMISSION _LIGHTMAPPING_REALTIME
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _MainTex:
+        m_Texture: {fileID: 2800000, guid: dba345bf566c48e49998d08f08b346ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _BumpScale: 1
+      _Cutoff: 0.86
+      _DetailNormalMapScale: 1
+      _DstBlend: 10
+      _EmissionScaleUI: 0.95
+      _Glossiness: 0
+      _Lightmapping: 1
+      _Metallic: 0
+      _Mode: 2
+      _OcclusionStrength: 1
+      _Parallax: 0.02
+      _ResultScale: 2
+      _SrcBlend: 5
+      _UVSec: 0
+      _ZWrite: 0
+    m_Colors:
+      _Color: {r: 0.051470578, g: 0.25425956, b: 1, a: 1}
+      _EmissionColor: {r: 0.44852942, g: 0.6348885, b: 1, a: 0.95}
+      _EmissionColorUI: {r: 0.9546204, g: 0.5870538, b: 0.40789506, a: 1}
+      _Range: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+      _Scale: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

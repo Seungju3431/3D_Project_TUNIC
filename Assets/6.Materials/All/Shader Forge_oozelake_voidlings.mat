@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Forge_oozelake_voidlings
+  m_Shader: {fileID: 4800000, guid: 8a03891e7bc6d844883c9a5cf5c8c1d9, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _noise:
+        m_Texture: {fileID: 2800000, guid: f0d90014fe852ba4ca08f1437c28e245, type: 3}
+        m_Scale: {x: 0.03125, y: 0.03125}
+        m_Offset: {x: 0, y: 0}
+      _ramp:
+        m_Texture: {fileID: 2800000, guid: dff6725e874bffe4a9be69a77a1e671b, type: 3}
+        m_Scale: {x: 16, y: 1}
+        m_Offset: {x: 0.34, y: 0}
+    m_Floats:
+      _Gloss: 0
+      _Metallic: 0
+      _outlinewidth: 0.125
+      _rampspeed: 0.1
+      _undulate_amp: 0.2
+      _undulate_freq: 0.5
+      _undulate_speed: 1
+    m_Colors:
+      _Color: {r: 3.7161145, g: 0.64400005, b: 4, a: 1}
+      _base_colour: {r: 0.54210186, g: 0, b: 1, a: 1}
+      _noise_colour: {r: 2.4156864, g: 1.2078432, b: 2.9960785, a: 1}
+      _outlinecolour: {r: 0, g: 0, b: 0, a: 1}
+      _scrollspeed: {r: 0, g: 0, b: 0, a: 0}
+      _texScale: {r: 0.44, g: 0.44, b: 1.5, a: 1.5}
+      _undulate_freq: {r: 0.5, g: 0.6, b: 0, a: 0}
+      _undulate_freq_speed: {r: 1.7, g: 1, b: 5, a: 6}
+  m_BuildTextureStacks: []
