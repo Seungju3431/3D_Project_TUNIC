@@ -26,8 +26,8 @@ public class Fox_Move : MonoBehaviour
     private bool isDodgeLessing = false;
     private bool isSwing = false;
     private bool isInput;
-    
-    
+
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -53,8 +53,8 @@ public class Fox_Move : MonoBehaviour
             }
             Debug.Log("현재 스테미나" + nowStamina);
         }
-        
-        
+
+
 
         Focus_Monster();
 
@@ -62,16 +62,16 @@ public class Fox_Move : MonoBehaviour
         float moveVertical = Input.GetAxisRaw("Vertical");
         animator.SetFloat("move_right", moveHorizontal);
         animator.SetFloat("move_forward", moveVertical);
-        
+
         if (Input.GetKeyUp(KeyCode.Space)) //달리기 멈추기(Update 다시 돌아갈 때, 상단에서 제일 먼저 확인)
         {
             animator.SetBool("isSprint", false);
         }
-       
+
         //집중 상태
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            
+
             animator.SetBool("isFocus", true);
 
             if (targetMonster != null && animator.GetBool("isFocus"))
@@ -94,16 +94,16 @@ public class Fox_Move : MonoBehaviour
             lastActionTime = Time.time;
         }
 
-        if (isDodgeing || isSwing) return;
-        
-        
+        if (isDodgeing || isSwing || isDodgeLessing) return;
+
+
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical).normalized;
 
         // 이동 처리
-            rb.MovePosition(transform.position + movement * moveSpeed * Time.deltaTime);
+        rb.MovePosition(transform.position + movement * moveSpeed * Time.deltaTime);
 
         // 플레이어 회전 처리
-        if (movement != Vector3.zero&&!animator.GetBool("isFocus"))
+        if (movement != Vector3.zero && !animator.GetBool("isFocus"))
         {
             Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
@@ -123,7 +123,7 @@ public class Fox_Move : MonoBehaviour
                 animator.SetTrigger("dodge");
                 lastActionTime = Time.time;
             }
-          
+
         }
 
         //스테미너 0 일 때, 구르기
@@ -147,12 +147,12 @@ public class Fox_Move : MonoBehaviour
         {
             //animator.SetLayerWeight(1, 0.78f);
             animator.SetBool("isPotion", true);
-            
+
         }
-        
-        
-       
-        
+
+
+
+
 
     }
 
@@ -180,7 +180,7 @@ public class Fox_Move : MonoBehaviour
     {
         isSwing = false;
     }
-   
+
     public void SwingCombo_Finish()
     {
         animator.ResetTrigger("swing_sword");
@@ -199,7 +199,7 @@ public class Fox_Move : MonoBehaviour
         Sword.SetActive(true);
         moveSpeed = 30f;
         animator.SetBool("isPotion", false);
-        
+
     }
     #endregion
 
@@ -224,6 +224,6 @@ public class Fox_Move : MonoBehaviour
         }
     }
 
-    
+
 }
 
