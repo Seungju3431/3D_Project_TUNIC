@@ -10,23 +10,28 @@ public class Fox_Move : MonoBehaviour
 
     [SerializeField] public float moveSpeed = 5f;
     [SerializeField] public float rotationSpeed = 700f;
-    [SerializeField] private float maxStamina = 40f; //스테미너 최대
-    [SerializeField] private float nowStamina = 40f; //현재 스테미너
-    [SerializeField] private float dodge_Stamina = 10f; //구르기 소모 스테미너
-    [SerializeField] private float staminaRate = 10f; //스테미너 회복
-    [SerializeField] private float staminaRateDelay = 1.5f;
+    [SerializeField] public GameObject Sword;
+    [SerializeField] public GameObject HPPotion;
+    [SerializeField] public ParticleSystem Particle_Potion;
+    [SerializeField] public ParticleSystem Particle_DodgeLess;
+
+    private float maxStamina = 40f; //스테미너 최대
+    private float nowStamina = 40f; //현재 스테미너
+    private float dodge_Stamina = 10f; //구르기 소모 스테미너
+    private float staminaRate = 20f; //스테미너 회복
+    private float staminaRateDelay = 1.5f;
+    private float lastActionTime = 0f;//공격시간 저장
 
     private bool isDodgeing = false;
+    private bool isDodgeLessing = false;
     private bool isSwing = false;
     private bool isInput;
-    private float lastActionTime = 0f;
+    
     
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        
-        
         isInput = true;
     }
 
@@ -49,13 +54,15 @@ public class Fox_Move : MonoBehaviour
             Debug.Log("현재 스테미나" + nowStamina);
         }
         
+        
+
         Focus_Monster();
 
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
         animator.SetFloat("move_right", moveHorizontal);
         animator.SetFloat("move_forward", moveVertical);
-
+        
         if (Input.GetKeyUp(KeyCode.Space)) //달리기 멈추기(Update 다시 돌아갈 때, 상단에서 제일 먼저 확인)
         {
             animator.SetBool("isSprint", false);
@@ -116,12 +123,18 @@ public class Fox_Move : MonoBehaviour
                 animator.SetTrigger("dodge");
                 lastActionTime = Time.time;
             }
-            else
-            {
-                Debug.Log("스테미너가 부족합니다.");
-            }
+          
         }
-        
+
+        //스테미너 0 일 때, 구르기
+        if (nowStamina <= 9 && isInput && Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("스테미너가 부족합니다.");
+            isDodgeLessing = true;
+            isInput = false;
+            animator.SetTrigger("dodge_less");
+            lastActionTime = Time.time;
+        }
 
         //달리기
         if (Input.GetKey(KeyCode.Space))
@@ -129,6 +142,15 @@ public class Fox_Move : MonoBehaviour
             animator.SetBool("isSprint", true);
         }
 
+        //HP 포션
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            //animator.SetLayerWeight(1, 0.78f);
+            animator.SetBool("isPotion", true);
+            
+        }
+        
+        
        
         
 
@@ -144,20 +166,43 @@ public class Fox_Move : MonoBehaviour
     {
         isDodgeing = false;
     }
+    public void DodgeLess_Start()
+    {
+        Particle_DodgeLess.Play();
+    }
+    public void DodegeLess_Finish()
+    {
+        Particle_DodgeLess.Stop();
+        isDodgeLessing = false;
+        isInput = true;
+    }
     public void Swing_Finish()
     {
         isSwing = false;
     }
-    //public void Swing_Start()
-    //{
-    //    isSwing = true;
-    //}
+   
     public void SwingCombo_Finish()
     {
         animator.ResetTrigger("swing_sword");
     }
+    public void Potioning_Start()
+    {
+        HPPotion.SetActive(true);
+        Sword.SetActive(false);
+        moveSpeed = 15;
+        Particle_Potion.Play();//파티클 재생
+    }
+
+    public void Potioning_Finish()
+    {
+        HPPotion.SetActive(false);
+        Sword.SetActive(true);
+        moveSpeed = 30f;
+        animator.SetBool("isPotion", false);
+        
+    }
     #endregion
-    
+
     private void Focus_Monster()
     {
         if (animator.GetBool("isFocus") && targetMonster != null)
@@ -179,33 +224,6 @@ public class Fox_Move : MonoBehaviour
         }
     }
 
-    //private void SwordCombo()
-    //{
-    //    if (comboTimer > 0)
-    //    {
-    //        comboTimer -= Time.deltaTime;
-    //    }
-    //    else
-    //    {
-    //        comboStep = 0;
-    //    }
-
-    //    if (isInput && Input.GetKeyDown(KeyCode.J))
-    //    {
-    //        comboStep++;
-    //        comboTimer = comboResetTime;
-
-    //        if (comboStep == 1)
-    //        {
-    //            isSwing = true;
-    //            animator.SetTrigger("swing_sword");
-    //        }
-    //        else if (comboStep == 2)
-    //        {
-    //            isSwing = true;
-    //            animator.SetTrigger("swing_sword_2");
-    //        }
-    //    }
-    //}
+    
 }
 

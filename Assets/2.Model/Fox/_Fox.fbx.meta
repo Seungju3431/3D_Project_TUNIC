@@ -449,7 +449,7 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
-    optimizeGameObjects: 0
+    optimizeGameObjects: 1
     motionNodeName: _Fox/Fox/root
     rigImportErrors: 
     rigImportWarnings: 
@@ -464,7 +464,24 @@ ModelImporter:
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
-    extraExposedTransformPaths: []
+    extraExposedTransformPaths:
+    - _Fox/Fox/root
+    - _Fox/Fox/root/head_IK
+    - _Fox/Fox/root/pelvis/chest
+    - _Fox/Fox/root/pelvis/leg_upper.L
+    - _Fox/Fox/root/pelvis/tail_main
+    - _Fox/Fox/root/pelvis/leg_upper.R
+    - _Fox/Fox/root/pelvis/tail_main/tail_tip
+    - _Fox/Fox/root/pelvis/leg_upper.R/leg_lower.R
+    - _Fox/Fox/root/pelvis/leg_upper.L/leg_lower.L
+    - _Fox/Fox/root/leg_pole.R
+    - _Fox/Fox/root/leg_pole.L
+    - _Fox/Fox/root/leg_IK.R
+    - _Fox/Fox/root/leg_IK.L
+    - _Fox/Fox/root/arm_pole.R
+    - _Fox/Fox/root/arm_pole.L
+    - _Fox/Fox/root/arm_IK_R
+    - _Fox/Fox/root/arm_IK_L
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
@@ -2145,8 +2162,747 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: _Fox
+        weight: 0
+      - path: _Fox/Fox
+        weight: 0
+      - path: _Fox/Fox/root
+        weight: 0
+      - path: _Fox/Fox/root/arm_IK_L
+        weight: 0
+      - path: _Fox/Fox/root/arm_IK_L/arm_IK_L_end
+        weight: 0
+      - path: _Fox/Fox/root/arm_IK_R
+        weight: 0
+      - path: _Fox/Fox/root/arm_IK_R/arm_IK_R_end
+        weight: 0
+      - path: _Fox/Fox/root/arm_pole.L
+        weight: 0
+      - path: _Fox/Fox/root/arm_pole.L/arm_pole.L_end
+        weight: 0
+      - path: _Fox/Fox/root/arm_pole.R
+        weight: 0
+      - path: _Fox/Fox/root/arm_pole.R/arm_pole.R_end
+        weight: 0
+      - path: _Fox/Fox/root/leg_IK.L
+        weight: 0
+      - path: _Fox/Fox/root/leg_IK.L/leg_IK.L_end
+        weight: 0
+      - path: _Fox/Fox/root/leg_IK.R
+        weight: 0
+      - path: _Fox/Fox/root/leg_IK.R/leg_IK.R_end
+        weight: 0
+      - path: _Fox/Fox/root/leg_pole.L
+        weight: 0
+      - path: _Fox/Fox/root/leg_pole.L/leg_pole.L_end
+        weight: 0
+      - path: _Fox/Fox/root/leg_pole.R
+        weight: 0
+      - path: _Fox/Fox/root/leg_pole.R/leg_pole.R_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.L
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.L/arm_lower.L
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.L/arm_lower.L/hand.L
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.L/arm_lower.L/hand.L/hand.L_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.L/arm_lower.L/hand.L/shield_proxy
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.L/arm_lower.L/hand.L/shield_proxy/Aura's
+          Gem
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.L/arm_lower.L/hand.L/bow_proxy
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/hand.R_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/sword_proxy
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/sword_proxy/sword1
+          trail
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/sword_proxy/hitbox_sword1_1
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/sword_proxy/hitbox_sword1_2
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/sword_proxy/shockwave
+          ring mesh
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/potion_proxy
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/potion_proxy/potion
+          (hp)
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/potion_proxy/potion
+          (mp)
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/stick_proxy
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/stick_proxy/stick
+          trail
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/stick_proxy/hitbox_stick
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/potion_proxy
+          (antidote)
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/sword_proxy
+          (sword 2)
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/sword_proxy
+          (sword 2)/sword2 trail
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/sword_proxy
+          (sword 2)/hitbox_sword1_1 1
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/sword_proxy
+          (sword 2)/hitbox_sword1_2 1
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/sword_proxy
+          (sword 2)/shockwave ring mesh 1
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/bow_root
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/bow_root/frond.L
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/bow_root/frond.R
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/bow_root/bow_muzzleflash
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand_tendril.008
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand_tendril.008/wand_tendril.007
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand_tendril.008/wand_tendril.007/wand_tendril.006
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand_tendril.008/wand_tendril.007/wand_tendril.006/wand_tendril.005
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand_tendril.008/wand_tendril.007/wand_tendril.006/wand_tendril.005/wand_tendril.004
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand_tendril.008/wand_tendril.007/wand_tendril.006/wand_tendril.005/wand_tendril.004/wand_tendril.003
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand_tendril.008/wand_tendril.007/wand_tendril.006/wand_tendril.005/wand_tendril.004/wand_tendril.003/wand_tendril.002
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand_tendril.008/wand_tendril.007/wand_tendril.006/wand_tendril.005/wand_tendril.004/wand_tendril.003/wand_tendril.002/wand_tendril.001
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand/wand
+          beam
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand/wand
+          anchor
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/dagger
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/dagger/dagger
+          mesh
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/dagger/shotgun_proxy
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wandbow
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wandbow/wandbow
+          1
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wandbow/wandbow_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand orb
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand orb/orb_base
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand orb/orb_sphere
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand orb/orb_tentacles
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/arm_upper.R/arm_lower.R/hand.R/wand orb/orb_tentacles_source
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/cape_upper
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/cape_upper/cape_middle
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/cape_upper/cape_middle/cape_lower
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/cape_upper/cape_middle/cape_lower/cape_lower_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/ear.L
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/ear.L/ear.L_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/ear.R
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/ear.R/ear.R_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/eyes
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/eyes/eyes_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/hair_main
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/hair_main/hair_tip
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/hair_main/hair_tip/hair_tip_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/mouth
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/mouth/mouth_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/floppy_hat_1
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/floppy_hat_1/floppy_hat_2
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/floppy_hat_1/floppy_hat_2/floppy_hat_3
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/floppy_hat_1/floppy_hat_2/floppy_hat_3/floppy_hat_4
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/floppy_hat_1/floppy_hat_2/floppy_hat_3/floppy_hat_4/floppy_hat_4_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/scavenger_mask
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/GameObject
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/chest/head/therealest
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/leg_upper.L
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/leg_upper.L/leg_lower.L
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/leg_upper.L/leg_lower.L/leg_lower.L_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/leg_upper.R
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/leg_upper.R/leg_lower.R
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/leg_upper.R/leg_lower.R/leg_lower.R_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/tail_main
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/tail_main/tail_tip
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/tail_main/tail_tip/tail_tip_end
+        weight: 0
+      - path: _Fox/Fox/root/pelvis/lantern
+        weight: 0
+      - path: _Fox/Fox/root/head_IK
+        weight: 0
+      - path: _Fox/Fox/root/head_IK/head_IK_end
+        weight: 0
+      - path: _Fox/Fox/root/freefloating
+        weight: 0
+      - path: _Fox/Fox/root/freefloating/key twist
+        weight: 0
+      - path: _Fox/Fox/root/freefloating/trinketCoin_lowPoly
+        weight: 0
+      - path: _Fox/Fox/root/freefloating/fox piggybank
+        weight: 0
+      - path: _Fox/Fox/root/freefloating/freefloating_doll_bottom
+        weight: 0
+      - path: _Fox/Fox/root/freefloating/freefloating_doll_tail
+        weight: 0
+      - path: _Fox/Fox/root/freefloating/freefloating_doll_top
+        weight: 0
+      - path: _Fox/Fox/book 1
+        weight: 0
+      - path: _Fox/Fox/book 1/book_L
+        weight: 0
+      - path: _Fox/Fox/book 1/book_R
+        weight: 0
+      - path: _Fox/Fox/book 1/book_page
+        weight: 0
+      - path: _Fox/Fox/book 1/book_page/book_page.001
+        weight: 0
+      - path: _Fox/Fox/book 1/book_page/book_page.001/book_page.002
+        weight: 0
+      - path: _Fox/fox
+        weight: 0
+      - path: _Fox/fox cape
+        weight: 0
+      - path: _Fox/fox hair
+        weight: 0
+      - path: '_Fox/FX: Block'
+        weight: 0
+      - path: '_Fox/FX: Block/Sparks'
+        weight: 0
+      - path: '_Fox/FX: damage boost'
+        weight: 0
+      - path: '_Fox/FX: sweat'
+        weight: 0
+      - path: '_Fox/FX: health flask'
+        weight: 0
+      - path: '_Fox/FX: health flask/PS lines 1'
+        weight: 0
+      - path: '_Fox/FX: health flask/PS confetti 1'
+        weight: 0
+      - path: '_Fox/FX: health flask/PS health spell (1) 1'
+        weight: 0
+      - path: '_Fox/FX: antidote'
+        weight: 0
+      - path: '_Fox/FX: antidote/PS lines'
+        weight: 0
+      - path: '_Fox/FX: antidote/PS confetti'
+        weight: 0
+      - path: '_Fox/FX: antidote/PS health spell (1)'
+        weight: 0
+      - path: _Fox/arrow spawn point
+        weight: 0
+      - path: _Fox/Death Camera Zone
+        weight: 0
+      - path: _Fox/Death Camera Zone/Camera Position 1
+        weight: 0
+      - path: '_Fox/FX: poison'
+        weight: 0
+      - path: _Fox/Forcewand trail
+        weight: 0
+      - path: '_Fox/Light: Lantern'
+        weight: 0
+      - path: _Fox/Techbow Bolt Spawn Point
+        weight: 0
+      - path: '_Fox/HT: Cross AOE hittrigger'
+        weight: 0
+      - path: '_Fox/FX: Cross AOE particles'
+        weight: 0
+      - path: '_Fox/HT: Spear'
+        weight: 0
+      - path: _Fox/Hyperdash Appear/DisapparFX
+        weight: 0
+      - path: _Fox/Lantern Light max extension
+        weight: 0
+      - path: _Fox/Lantern Light min extension
+        weight: 0
+      - path: '_Fox/FX: Spear Beam'
+        weight: 0
+      - path: '_Fox/FX: Spear Charge PS'
+        weight: 0
+      - path: '_Fox/FX: Spear Beam PS'
+        weight: 0
+      - path: '_Fox/PS: iframe dust'
+        weight: 0
+      - path: _Fox/floppy hat
+        weight: 0
+      - path: '_Fox/FX: prayer'
+        weight: 0
+      - path: '_Fox/FX: prayer/cylinder 1'
+        weight: 0
+      - path: '_Fox/FX: prayer/cylinder 2'
+        weight: 0
+      - path: '_Fox/FX: prayer/radial_uv_ring'
+        weight: 0
+      - path: '_Fox/HT: hyperdash'
+        weight: 0
+      - path: _Fox/book
+        weight: 0
+      - path: _Fox/techbow_turret
+        weight: 0
+      - path: _Fox/lantern arc
+        weight: 0
+      - path: '_Fox/lantern arc/PS: lantern arc'
+        weight: 0
+      - path: '_Fox/lantern arc/Light: lantern arc'
+        weight: 0
+      - path: _Fox/icedagger Hit Trigger
+        weight: 0
+      - path: '_Fox/HT: lantern'
+        weight: 0
+      - path: _Fox/FX:lightning
+        weight: 0
+      - path: _Fox/FX:lightning AOE impact
+        weight: 0
+      - path: '_Fox/PS: tether tip'
+        weight: 0
+      - path: _Fox/Hyperdash FX
+        weight: 0
+      - path: _Fox/Hyperdash FX/dash arrow
+        weight: 0
+      - path: _Fox/Hyperdash FX/dash fox
+        weight: 0
+      - path: _Fox/Hyperdash FX/dashbolt_kickoff_1
+        weight: 0
+      - path: _Fox/Hyperdash FX/dashbolt_kickoff_2
+        weight: 0
+      - path: _Fox/Hyperdash FX/bolt torus
+        weight: 0
+      - path: _Fox/Hyperdash FX/bolt torus 2
+        weight: 0
+      - path: '_Fox/Hyperdash FX/PS: sparks'
+        weight: 0
+      - path: '_Fox/Hyperdash FX/PS: electricity'
+        weight: 0
+      - path: _Fox/Hyperdash FX/bolt particle 02
+        weight: 0
+      - path: _Fox/Hyperdash FX/dashbolt_kickoff_partway
+        weight: 0
+      - path: '_Fox/Hyperdash FX/PS: end effect'
+        weight: 0
+      - path: '_Fox/Hyperdash FX/PS: sparks short'
+        weight: 0
+      - path: _Fox/Hyperdash Termination FX
+        weight: 0
+      - path: _Fox/Hyperdash Termination FX/dash arrow 1
+        weight: 0
+      - path: _Fox/Hyperdash Termination FX/dash fox 1
+        weight: 0
+      - path: _Fox/Hyperdash Termination FX/dashbolt_kickoff_1 1
+        weight: 0
+      - path: _Fox/Hyperdash Termination FX/dashbolt_kickoff_2 1
+        weight: 0
+      - path: _Fox/Hyperdash Termination FX/bolt torus 1
+        weight: 0
+      - path: _Fox/Hyperdash Termination FX/bolt torus 2 1
+        weight: 0
+      - path: '_Fox/Hyperdash Termination FX/PS: sparks 1'
+        weight: 0
+      - path: '_Fox/Hyperdash Termination FX/PS: electricity 1'
+        weight: 0
+      - path: _Fox/Hyperdash Termination FX/bolt particle 02 1
+        weight: 0
+      - path: _Fox/Hyperdash Termination FX/dashbolt_kickoff_partway 1
+        weight: 0
+      - path: '_Fox/Hyperdash Termination FX/PS: end effect 1'
+        weight: 0
+      - path: _Fox/CreatureFrozenIceBase
+        weight: 0
+      - path: _Fox/CreatureFrozenIceBase/icechunk
+        weight: 0
+      - path: _Fox/CreatureFrozenIceBase/Cube
+        weight: 0
+      - path: '_Fox/_Annotation: New Annotation'
+        weight: 0
+      - path: _Fox/Lightprobe Override Anchor
+        weight: 0
+      - path: _Fox/icedagger_fx
+        weight: 0
+      - path: _Fox/icedagger_fx/traces
+        weight: 0
+      - path: _Fox/icedagger_fx/face cam 1
+        weight: 0
+      - path: _Fox/icedagger_fx/face cam 1/ring
+        weight: 0
+      - path: _Fox/icedagger_fx/face cam 1/gas
+        weight: 0
+      - path: _Fox/icedagger_fx/face cam 1/ring (spikes)
+        weight: 0
+      - path: _Fox/icedagger_fx/face cam 1/ring (2nd)
+        weight: 0
+      - path: _Fox/icedagger_fx/face cam 1/charge_core 1
+        weight: 0
+      - path: _Fox/icedagger_blast
+        weight: 0
+      - path: _Fox/icedagger_blast/icechunk_big
+        weight: 0
+      - path: _Fox/icedagger_blast/icechunk_spike (1)
+        weight: 0
+      - path: _Fox/icedagger_blast/icechunk_spike (2)
+        weight: 0
+      - path: _Fox/icedagger_blast/icechunk_spike (3)
+        weight: 0
+      - path: _Fox/icedagger_blast/icechunk_spike (4)
+        weight: 0
+      - path: _Fox/icedagger_blast/icechunk_spike (5)
+        weight: 0
+      - path: _Fox/icedagger_blast/icechunk_spike (6)
+        weight: 0
+      - path: _Fox/icedagger_blast/icechunk_spike (7)
+        weight: 0
+      - path: _Fox/icedagger_blast/face cam
+        weight: 0
+      - path: _Fox/icedagger_blast/face cam/ring_thicker
+        weight: 0
+      - path: _Fox/icedagger_blast/face cam/ring_thicker (spikes)
+        weight: 0
+      - path: _Fox/icedagger_blast/icedagger_shockwave
+        weight: 0
+      - path: '_Fox/icedagger_blast/PS: shards (physics)'
+        weight: 0
+      - path: '_Fox/icedagger_blast/PS: shards (physics)/PS: triangles'
+        weight: 0
+      - path: '_Fox/icedagger_blast/PS: shards (physics)/PS: shards'
+        weight: 0
+      - path: _Fox/icedagger_blast/charge_core
+        weight: 0
+      - path: _Fox/wandbow fire effect
+        weight: 0
+      - path: _Fox/wandbow fire effect/explosionfx_spikes
+        weight: 0
+      - path: _Fox/tetherwand_hit_fx
+        weight: 0
+      - path: _Fox/tetherwand_hit_fx/starburst mesh
+        weight: 0
+      - path: _Fox/tetherwand_hit_fx/starburst mesh (1)
+        weight: 0
+      - path: _Fox/tetherwand_beam
+        weight: 0
+      - path: _Fox/tetherwand_beam/tentacle_beam_armature
+        weight: 0
+      - path: _Fox/tetherwand_beam/tentacle_beam_armature/end_bone
+        weight: 0
+      - path: _Fox/tetherwand_beam/tentacle_beam_armature/end_bone/end_bone_end
+        weight: 0
+      - path: _Fox/tetherwand_beam/tentacle_beam_armature/start_bone
+        weight: 0
+      - path: _Fox/tetherwand_beam/tentacle_beam_armature/start_bone/start_bone_end
+        weight: 0
+      - path: _Fox/tetherwand_beam/tentacle_beam_mesh
+        weight: 0
+      - path: _Fox/tetherwand_windup_root
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_armature
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_armature/base_rotator
+          2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_armature/base_rotator
+          2/tentacle.1 2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_armature/base_rotator
+          2/tentacle.1 2/tentacle.2 2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_armature/base_rotator
+          2/tentacle.1 2/tentacle.2 2/tentacle.3 2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_armature/base_rotator
+          2/tentacle.1 2/tentacle.2 2/tentacle.3 2/tentacle.4 2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_armature/base_rotator
+          2/tentacle.1 2/tentacle.2 2/tentacle.3 2/tentacle.4 2/tentacle.5 2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_armature/base_rotator
+          2/tentacle.1 2/tentacle.2 2/tentacle.3 2/tentacle.4 2/tentacle.5 2/tentacle.6
+          2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_armature/base_rotator
+          2/tentacle.1 2/tentacle.2 2/tentacle.3 2/tentacle.4 2/tentacle.5 2/tentacle.6
+          2/tentacle.7 2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_armature/base_rotator
+          2/tentacle.1 2/tentacle.2 2/tentacle.3 2/tentacle.4 2/tentacle.5 2/tentacle.6
+          2/tentacle.7 2/tentacle.8 2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_armature/base_rotator
+          2/tentacle.1 2/tentacle.2 2/tentacle.3 2/tentacle.4 2/tentacle.5 2/tentacle.6
+          2/tentacle.7 2/tentacle.8 2/tentacle.8_end 2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_armature/base_rotator
+          2/tentacle.1 2/tentacle.2 2/tentacle.3 2/tentacle.4 2/tentacle.5 2/tentacle.6
+          2/tentacle.7 2/tentacle.8 2/slashfx 2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_armature/base_rotator
+          2/tentacle.1 2/tentacle.2 2/tentacle.3 2/tentacle.4 2/tentacle.5 2/tentacle.6
+          2/tentacle.7 2/tentacle.8 2/slashfx 2/slashfx_end 2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup/tentacle_mesh
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_armature
+          1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_armature
+          1/base_rotator
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_armature
+          1/base_rotator/tentacle.1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_armature
+          1/base_rotator/tentacle.1/tentacle.2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_armature
+          1/base_rotator/tentacle.1/tentacle.2/tentacle.3
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_armature
+          1/base_rotator/tentacle.1/tentacle.2/tentacle.3/tentacle.4
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_armature
+          1/base_rotator/tentacle.1/tentacle.2/tentacle.3/tentacle.4/tentacle.5
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_armature
+          1/base_rotator/tentacle.1/tentacle.2/tentacle.3/tentacle.4/tentacle.5/tentacle.6
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_armature
+          1/base_rotator/tentacle.1/tentacle.2/tentacle.3/tentacle.4/tentacle.5/tentacle.6/tentacle.7
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_armature
+          1/base_rotator/tentacle.1/tentacle.2/tentacle.3/tentacle.4/tentacle.5/tentacle.6/tentacle.7/tentacle.8
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_armature
+          1/base_rotator/tentacle.1/tentacle.2/tentacle.3/tentacle.4/tentacle.5/tentacle.6/tentacle.7/tentacle.8/tentacle.8_end
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_armature
+          1/base_rotator/tentacle.1/tentacle.2/tentacle.3/tentacle.4/tentacle.5/tentacle.6/tentacle.7/tentacle.8/slashfx
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_armature
+          1/base_rotator/tentacle.1/tentacle.2/tentacle.3/tentacle.4/tentacle.5/tentacle.6/tentacle.7/tentacle.8/slashfx/slashfx_end
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (1)/tentacle_mesh 1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_armature
+          2
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_armature
+          2/base_rotator 1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_armature
+          2/base_rotator 1/tentacle.1 1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_armature
+          2/base_rotator 1/tentacle.1 1/tentacle.2 1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_armature
+          2/base_rotator 1/tentacle.1 1/tentacle.2 1/tentacle.3 1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_armature
+          2/base_rotator 1/tentacle.1 1/tentacle.2 1/tentacle.3 1/tentacle.4 1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_armature
+          2/base_rotator 1/tentacle.1 1/tentacle.2 1/tentacle.3 1/tentacle.4 1/tentacle.5
+          1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_armature
+          2/base_rotator 1/tentacle.1 1/tentacle.2 1/tentacle.3 1/tentacle.4 1/tentacle.5
+          1/tentacle.6 1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_armature
+          2/base_rotator 1/tentacle.1 1/tentacle.2 1/tentacle.3 1/tentacle.4 1/tentacle.5
+          1/tentacle.6 1/tentacle.7 1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_armature
+          2/base_rotator 1/tentacle.1 1/tentacle.2 1/tentacle.3 1/tentacle.4 1/tentacle.5
+          1/tentacle.6 1/tentacle.7 1/tentacle.8 1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_armature
+          2/base_rotator 1/tentacle.1 1/tentacle.2 1/tentacle.3 1/tentacle.4 1/tentacle.5
+          1/tentacle.6 1/tentacle.7 1/tentacle.8 1/tentacle.8_end 1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_armature
+          2/base_rotator 1/tentacle.1 1/tentacle.2 1/tentacle.3 1/tentacle.4 1/tentacle.5
+          1/tentacle.6 1/tentacle.7 1/tentacle.8 1/slashfx 1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_armature
+          2/base_rotator 1/tentacle.1 1/tentacle.2 1/tentacle.3 1/tentacle.4 1/tentacle.5
+          1/tentacle.6 1/tentacle.7 1/tentacle.8 1/slashfx 1/slashfx_end 1
+        weight: 0
+      - path: _Fox/tetherwand_windup_root/tetherwand_windup (2)/tentacle_mesh 2
+        weight: 0
+      - path: '_Fox/CZ: zoomin'
+        weight: 0
+      - path: '_Fox/CZ: zoomin/Camera Position'
+        weight: 0
+      - path: '_Fox/PS: Piggybank Smash'
+        weight: 0
+      - path: '_Fox/FX: Block (new)'
+        weight: 0
+      - path: '_Fox/FX: Block (new)/Sparks 1'
+        weight: 0
+      - path: '_Fox/FX: Block (new)/FX: Block player-aligned'
+        weight: 0
+      - path: _Fox/shotgun muzzle flash
+        weight: 0
+      - path: _Fox/shotgun muzzle flash/ragged flash
+        weight: 0
+      - path: _Fox/shotgun muzzle flash/star flash
+        weight: 0
+      - path: _Fox/shotgun muzzle flash/sphere flash
+        weight: 0
+      - path: _Fox/shotgun muzzle flash/Point Light
+        weight: 0
+      - path: _Fox/shotgun muzzle flash/PS sparks
+        weight: 0
+      - path: '_Fox/HT: shotgun'
+        weight: 0
+      - path: _Fox/Shotgun Pool
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile/rotator (1)
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile/rotator (1)/Trail (1) 1
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile/rotator (1)/Trail (2)
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile/rotator (1)/Trail (3)
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile/Trail (1)
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile/projectile graphic
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile/projectile graphic/graphic (1)
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile/trail graphic
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile/trail graphic/PS distance
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile/trail graphic/Trail (1) 2
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile/trail graphic/PS distance 1
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile/impact fx
+        weight: 0
+      - path: _Fox/Shotgun Pool/shotgun_projectile/impact fx/techbolt impact
+        weight: 0
+      - path: '_Fox/Shotgun Pool/shotgun_projectile/impact fx/PS: balls'
+        weight: 0
+      - path: '_Fox/Shotgun Pool/shotgun_projectile/impact fx/PS: ball at origin'
+        weight: 0
+      - path: _Fox/Fairy Seeker Pool
+        weight: 0
+      - path: _Fox/Fairy Seeker Pool/fairyseeker
+        weight: 0
+      - path: _Fox/Fairy Seeker Pool/fairyseeker/graphic
+        weight: 0
+      - path: '_Fox/FX: stamina boost'
+        weight: 0
+      - path: _Fox/ZTargets
+        weight: 0
+      - path: _Fox/ZTargets/ZTargetting Reticule
+        weight: 0
+      - path: _Fox/ZTargets/ZTargetting Reticule/Cube 1
+        weight: 0
+      - path: _Fox/ZTargets/ZTargetting Reticule/Cube 2
+        weight: 0
+      - path: _Fox/ZTargets/ZTargetting Reticule/Cube 3
+        weight: 0
+      - path: _Fox/ZTargets/ZTargetting Reticule/thin circle
+        weight: 0
+      - path: _Fox/ZTargets/ZTargetting Reticule Preview
+        weight: 0
+      - path: _Fox/ZTargets/ZTargetting Reticule Preview/circle
+        weight: 0
+      - path: _Fox/Water Collisison
+        weight: 0
+      - path: '_Fox/SFX: prayer loop'
+        weight: 0
+      - path: '_Fox/SFX: Hourglass Event'
+        weight: 0
+      - path: '_Fox/SFX: Hourglass Snapshot'
+        weight: 0
+      - path: '_Fox/SFX: Fairy Seeker SFX'
+        weight: 0
+      - path: '_Fox/PS: iframe dust (more)'
+        weight: 0
+      - path: '_Fox/FX: cheap icebolt'
+        weight: 0
+      - path: _Fox/doll
+        weight: 0
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
