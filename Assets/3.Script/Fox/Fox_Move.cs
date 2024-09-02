@@ -8,8 +8,8 @@ public class Fox_Move : MonoBehaviour
     private Animator animator;
     private GameObject targetMonster;
 
-    [SerializeField] public float moveSpeed = 5f;
-    [SerializeField] public float rotationSpeed = 700f;
+    [SerializeField] public float moveSpeed;
+    [SerializeField] public float rotationSpeed;
     [SerializeField] public GameObject Sword;
     [SerializeField] public GameObject HPPotion;
     [SerializeField] public ParticleSystem Particle_Potion;
