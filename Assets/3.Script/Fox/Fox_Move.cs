@@ -51,7 +51,7 @@ public class Fox_Move : MonoBehaviour
             {
                 nowStamina = maxStamina;
             }
-            Debug.Log("현재 스테미나" + nowStamina);
+            //Debug.Log("현재 스테미나" + nowStamina);
         }
 
 
