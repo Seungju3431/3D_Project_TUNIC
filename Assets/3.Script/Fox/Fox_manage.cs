@@ -38,11 +38,13 @@ public class Fox_manage : MonoBehaviour
 
         if (other.CompareTag("Monster_Attack"))
         {
-            Monster monster_Attack = other.transform.parent.GetComponent<Monster>();
+            MonsterController monster_Attack = other.transform.parent.GetComponent<MonsterController>();
             curHealth -= monster_Attack.damage;
             Debug.Log("현재체력 : " + curHealth);
             ani.SetTrigger("hurt");
             isHurt = true;
+            Fox_Move fox_Move = GetComponent<Fox_Move>();
+            fox_Move.Hurt_Bool();
             if (curHealth == 0)
             {
                 ani.SetTrigger("die");

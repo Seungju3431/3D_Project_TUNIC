@@ -1785,7 +1785,7 @@ GameObject:
   - component: {fileID: 1568224144}
   m_Layer: 0
   m_Name: untitled (1)
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1804,7 +1804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2438278682648151870}
   targetDistance: 15
-  hitDistance: 3
+  hitDistance: 4
   damage: 4
   maxHealth: 10
   curHealth: 10
@@ -1822,7 +1822,7 @@ NavMeshAgent:
   m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 1000
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

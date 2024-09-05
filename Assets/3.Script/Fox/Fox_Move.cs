@@ -202,7 +202,12 @@ public class Fox_Move : MonoBehaviour
 
     }
     #endregion
-
+    public void Hurt_Bool()
+    {
+        isSwing = false;
+        isDodgeing = false;
+        isDodgeLessing = false;
+    }
     private void Focus_Monster()
     {
         if (animator.GetBool("isFocus") && targetMonster != null)

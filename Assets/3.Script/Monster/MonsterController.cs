@@ -13,11 +13,13 @@ public class MonsterController : MonoBehaviour
     public int maxHealth;
     public int curHealth;
 
+    private bool isHurting;
+    private bool isAttacking;
 
-
-    private Coroutine controll_co_I = null;
-    private Coroutine controll_co_W = null;
-    private Coroutine controll_co_F = null;
+    private Coroutine controll_co_I = null; //Idle
+    private Coroutine controll_co_W = null; //Walk
+    private Coroutine controll_co_F = null; //Find
+    private Coroutine controll_co_A = null; //Attack
     private Animator ani;
     private NavMeshAgent nav;
     private Rigidbody rigid;
@@ -30,8 +32,11 @@ public class MonsterController : MonoBehaviour
     }
     private void Start()
     {
+        isHurting = false;
+        isAttacking = false;
         controll_co_F = StartCoroutine(Find_co());
-        controll_co_I = StartCoroutine(Idle_co());
+
+        //controll_co_I = StartCoroutine(Idle_co());
 
     }
     private void Update()
@@ -43,10 +48,38 @@ public class MonsterController : MonoBehaviour
     //범위안에서 계속 Fox찾기
     private IEnumerator Find_co()
     {
+        if (isHurting)
+        {
+
+            yield return new WaitForSeconds(1f);
+            Debug.Log(isHurting);
+            isHurting = false;
+        }
         while (true)
         {
+
             float distanceToFox = Vector3.Distance(transform.position, target.position);
-            if (distanceToFox <= targetDistance && controll_co_W == null)
+         
+            if (distanceToFox <= hitDistance && controll_co_A == null)
+            {
+                if (controll_co_I != null)
+                {
+
+                    StopCoroutine(controll_co_I);
+                    controll_co_I = null;
+                }
+                if (controll_co_W != null)
+                {
+
+                    StopCoroutine(controll_co_W);
+                    controll_co_W = null;
+                }
+                isAttacking = true;
+                controll_co_A = StartCoroutine(Attack_co());
+                //Debug.Log("들어왔니?");
+
+            }
+            else if (distanceToFox <= targetDistance && controll_co_W == null && controll_co_A == null)
             {
                 if (controll_co_I != null)
                 {
@@ -54,7 +87,7 @@ public class MonsterController : MonoBehaviour
                     controll_co_I = null;
                 }
                 controll_co_W = StartCoroutine(Walk_co());
-                Debug.Log("추적 시작");
+               // Debug.Log("추적 시작");
             }
             else if (distanceToFox > targetDistance && controll_co_I == null)
             {
@@ -65,9 +98,9 @@ public class MonsterController : MonoBehaviour
                 }
 
                 controll_co_I = StartCoroutine(Idle_co());
-                Debug.Log("추적 멈춤");
-
+               // Debug.Log("추적 멈춤");
             }
+            
             yield return null;
 
         }
@@ -115,15 +148,35 @@ public class MonsterController : MonoBehaviour
     //공격
     private IEnumerator Attack_co()
     {
-        float distanceToFox = Vector3.Distance(transform.position, target.position);
-        while (true)
-        { 
-        if (distanceToFox >= hitDistance)
+        nav.SetDestination(transform.position);
+        ani.SetBool("isWalk", false);
+        bool turn = true;
+        ani.SetTrigger("attack_1");
+        while (turn)
         {
-                ani.SetTrigger("attack_1");
+          
+                Vector3 movement = target.position - transform.position;
+            Debug.Log(Vector3.Angle(transform.forward, movement));
+            if (Vector3.Angle(transform.forward, movement) > 10)
+            {
+                Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, nav.angularSpeed * 0.8f * Time.deltaTime);
+                yield return null;
+            }
+            else
+            {
+                //ani.SetTrigger("attack_1");
+                turn = false;
+            }
+
+            
         }
         
-        }
+        yield return new WaitForSeconds(2f);
+        isAttacking = false;
+        yield return new WaitForSeconds(1f);
+        controll_co_A = null;
+        
     }
 
     ////타겟 놓쳤을 때
@@ -141,14 +194,35 @@ public class MonsterController : MonoBehaviour
 
         if (other.CompareTag("Sword"))
         {
+            //이미션
             curHealth -= sword.damage;
-            ani.SetTrigger("hurt");
-            if (controll_co_I == null && controll_co_W != null)
+
+            if (!isAttacking)
+            { 
+            
+            StopCoroutine(controll_co_F);
+            controll_co_F = null;
+            isHurting = true;
+            if (controll_co_I != null)
             {
+
                 StopCoroutine(controll_co_I);
-                StopCoroutine(controll_co_W);
+                controll_co_I = null;
             }
+            if (controll_co_W != null)
+            {
+
+                StopCoroutine(controll_co_W);
+                controll_co_W = null;
+            }
+            ani.SetBool("isWalk", false);
+            ani.SetTrigger("hurt");
+
+
+
+            controll_co_F = StartCoroutine(Find_co());
             Debug.Log("Sword : " + curHealth);
+            }
         }
     }
 
@@ -156,3 +230,4 @@ public class MonsterController : MonoBehaviour
 
 
 }
+
