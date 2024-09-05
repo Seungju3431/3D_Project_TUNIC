@@ -22,27 +22,23 @@ public class MonsterController : MonoBehaviour
     private Coroutine controll_co_A = null; //Attack
     private Animator ani;
     private NavMeshAgent nav;
-    private Rigidbody rigid;
+    [SerializeField]public Material mat_Hurt;
+    [SerializeField] public Material mat_Base;
+
+    
 
     private void Awake()
     {
         ani = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
-        rigid = GetComponent<Rigidbody>();
+    
     }
     private void Start()
     {
         isHurting = false;
         isAttacking = false;
         controll_co_F = StartCoroutine(Find_co());
-
-        //controll_co_I = StartCoroutine(Idle_co());
-
-    }
-    private void Update()
-    {
-
-
+        
     }
 
     //범위안에서 계속 Fox찾기
@@ -100,9 +96,7 @@ public class MonsterController : MonoBehaviour
                 controll_co_I = StartCoroutine(Idle_co());
                // Debug.Log("추적 멈춤");
             }
-            
             yield return null;
-
         }
 
     }
@@ -225,9 +219,5 @@ public class MonsterController : MonoBehaviour
             }
         }
     }
-
-
-
-
 }
 
