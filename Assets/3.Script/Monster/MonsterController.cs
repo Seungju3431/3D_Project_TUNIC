@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour
 {
+    [SerializeField] public GameObject fx_Hit;
     [SerializeField] public Transform target;
     public float targetDistance;
     public float hitDistance;
@@ -22,16 +23,15 @@ public class MonsterController : MonoBehaviour
     private Coroutine controll_co_A = null; //Attack
     private Animator ani;
     private NavMeshAgent nav;
-    [SerializeField]public Material mat_Hurt;
-    [SerializeField] public Material mat_Base;
-
     
+
+
 
     private void Awake()
     {
         ani = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
-    
+
     }
     private void Start()
     {
@@ -44,6 +44,7 @@ public class MonsterController : MonoBehaviour
     //범위안에서 계속 Fox찾기
     private IEnumerator Find_co()
     {
+        
         if (isHurting)
         {
 
@@ -55,7 +56,7 @@ public class MonsterController : MonoBehaviour
         {
 
             float distanceToFox = Vector3.Distance(transform.position, target.position);
-         
+
             if (distanceToFox <= hitDistance && controll_co_A == null)
             {
                 if (controll_co_I != null)
@@ -83,7 +84,7 @@ public class MonsterController : MonoBehaviour
                     controll_co_I = null;
                 }
                 controll_co_W = StartCoroutine(Walk_co());
-               // Debug.Log("추적 시작");
+                // Debug.Log("추적 시작");
             }
             else if (distanceToFox > targetDistance && controll_co_I == null)
             {
@@ -94,7 +95,7 @@ public class MonsterController : MonoBehaviour
                 }
 
                 controll_co_I = StartCoroutine(Idle_co());
-               // Debug.Log("추적 멈춤");
+                // Debug.Log("추적 멈춤");
             }
             yield return null;
         }
@@ -148,9 +149,9 @@ public class MonsterController : MonoBehaviour
         ani.SetTrigger("attack_1");
         while (turn)
         {
-          
-                Vector3 movement = target.position - transform.position;
-            Debug.Log(Vector3.Angle(transform.forward, movement));
+
+            Vector3 movement = target.position - transform.position;
+            //Debug.Log(Vector3.Angle(transform.forward, movement));
             if (Vector3.Angle(transform.forward, movement) > 10)
             {
                 Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
@@ -163,14 +164,14 @@ public class MonsterController : MonoBehaviour
                 turn = false;
             }
 
-            
+
         }
-        
+
         yield return new WaitForSeconds(2f);
         isAttacking = false;
         yield return new WaitForSeconds(1f);
         controll_co_A = null;
-        
+
     }
 
     ////타겟 놓쳤을 때
@@ -178,46 +179,98 @@ public class MonsterController : MonoBehaviour
     //{ 
 
     //}
-
+    private IEnumerator HitEffect(GameObject obj, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        obj.SetActive(false);
+    }
     //피격
     private void OnTriggerEnter(Collider other)
     {
-        Sword sword = other.GetComponent<Sword>();
-
-        if (sword == null) return;
 
         if (other.CompareTag("Sword"))
         {
+            other.TryGetComponent(out Sword sword);
             //이미션
             curHealth -= sword.damage;
-
-            if (!isAttacking)
-            { 
-            
-            StopCoroutine(controll_co_F);
-            controll_co_F = null;
-            isHurting = true;
-            if (controll_co_I != null)
-            {
-
-                StopCoroutine(controll_co_I);
-                controll_co_I = null;
-            }
-            if (controll_co_W != null)
-            {
-
-                StopCoroutine(controll_co_W);
-                controll_co_W = null;
-            }
-            ani.SetBool("isWalk", false);
-            ani.SetTrigger("hurt");
-
-
-
-            controll_co_F = StartCoroutine(Find_co());
             Debug.Log("Sword : " + curHealth);
+            if (((1 << other.gameObject.layer) & (1 << 7)) != 0)
+            {
+                //플레이어의 콜라이더 중심과 몬스터의 콜라이더 중심 찾기
+                Vector3 playerColliderCenter = this.GetComponent<Collider>().bounds.center;
+                Vector3 monsterColliderCenter = other.bounds.center;
+
+                //두 중심 지점의 평균 위치를 계산하고 히트 효과의 생성 위치로 설정
+                Vector3 hitEffectPosition = (playerColliderCenter + monsterColliderCenter) / 2;
+
+                fx_Hit.transform.position = hitEffectPosition;
+                fx_Hit.SetActive(true);
+                StartCoroutine(HitEffect(fx_Hit, 0.2f));
+            }
+              
+            if (!isAttacking)
+            {
+                StopCoroutine(controll_co_F);
+                controll_co_F = null;
+                isHurting = true;
+                if (controll_co_I != null)
+                {
+
+                    StopCoroutine(controll_co_I);
+                    controll_co_I = null;
+                }
+                if (controll_co_W != null)
+                {
+
+                    StopCoroutine(controll_co_W);
+                    controll_co_W = null;
+                }
+                ani.SetBool("isWalk", false);
+                ani.SetTrigger("hurt");
+
+
+
+                controll_co_F = StartCoroutine(Find_co());
+                
             }
         }
     }
+
+    ////피격
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Debug.Log("dd");
+    //    // 충돌한 객체가 "Sword" 태그를 가지고 있는지 확인합니다.
+    //    if (collision.gameObject.CompareTag("Sword"))
+    //    {
+    //        Debug.Log(collision.gameObject.name);
+    //        collision.transform.TryGetComponent(out Sword sword);
+    //        Debug.Log(sword.name);
+    //        // 이미션 처리
+    //        curHealth -= sword.damage;
+
+    //        if (!isAttacking)
+    //        {
+    //            StopCoroutine(controll_co_F);
+    //            controll_co_F = null;
+    //            isHurting = true;
+    //            if (controll_co_I != null)
+    //            {
+    //                StopCoroutine(controll_co_I);
+    //                controll_co_I = null;
+    //            }
+    //            if (controll_co_W != null)
+    //            {
+    //                StopCoroutine(controll_co_W);
+    //                controll_co_W = null;
+    //            }
+    //            ani.SetBool("isWalk", false);
+    //            ani.SetTrigger("hurt");
+
+    //            controll_co_F = StartCoroutine(Find_co());
+    //            Debug.Log("Sword : " + curHealth);
+    //        }
+    //    }
+    //}
 }
 
