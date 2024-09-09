@@ -23,7 +23,7 @@ public class MonsterController : MonoBehaviour
     private Coroutine controll_co_A = null; //Attack
     private Animator ani;
     private NavMeshAgent nav;
-    
+
 
 
 
@@ -38,13 +38,13 @@ public class MonsterController : MonoBehaviour
         isHurting = false;
         isAttacking = false;
         controll_co_F = StartCoroutine(Find_co());
-        
+
     }
 
     //범위안에서 계속 Fox찾기
     private IEnumerator Find_co()
     {
-        
+
         if (isHurting)
         {
 
@@ -108,23 +108,25 @@ public class MonsterController : MonoBehaviour
         //기본 움직임 (랜덤으로 왔다 갔다)
         while (true)
         {
-            Vector3 randomDirection = Random.insideUnitSphere * 5f; //5f범위
+            float minimumDistance = nav.stoppingDistance + 5f; //랜덤으로 찍힌 이동좌표가 stoppingDistance보다 작을 때, 계산이 틀어지기 때문에
+            //Vector3 randomDirection = Random.insideUnitSphere * 10f; //5f범위
+            Vector3 randomDirection = Random.insideUnitSphere * minimumDistance; //5f범위
             randomDirection += transform.position;
             NavMeshHit hit;
-            NavMesh.SamplePosition(randomDirection, out hit, 5f, 1);
+            NavMesh.SamplePosition(randomDirection, out hit, 10f, 1);
             Vector3 finalPosition = hit.position;
 
             nav.SetDestination(finalPosition);
             ani.SetBool("isWalk", true);
 
-            while (nav.pathPending || nav.remainingDistance > 0.5f)
+            while (nav.pathPending || nav.remainingDistance > nav.stoppingDistance)
             {
 
                 yield return null;
             }
 
             ani.SetBool("isWalk", false);
-            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            yield return new WaitForSeconds(Random.Range(3f, 5f));
 
         }
     }
@@ -207,7 +209,7 @@ public class MonsterController : MonoBehaviour
                 fx_Hit.SetActive(true);
                 StartCoroutine(HitEffect(fx_Hit, 0.2f));
             }
-              
+
             if (!isAttacking)
             {
                 StopCoroutine(controll_co_F);
@@ -231,7 +233,7 @@ public class MonsterController : MonoBehaviour
 
 
                 controll_co_F = StartCoroutine(Find_co());
-                
+
             }
         }
     }
@@ -273,4 +275,3 @@ public class MonsterController : MonoBehaviour
     //    }
     //}
 }
-

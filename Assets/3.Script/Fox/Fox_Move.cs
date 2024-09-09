@@ -7,6 +7,9 @@ public class Fox_Move : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     private GameObject targetMonster;
+    private Nav_Move navMove;
+    private Vector3 position_Fox;
+    private bool onNav = false;
 
     [SerializeField] public float moveSpeed;
     [SerializeField] public float rotationSpeed;
@@ -33,15 +36,37 @@ public class Fox_Move : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         isInput = true;
+        navMove = GetComponent<Nav_Move>();
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+        //rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+        
     }
 
     private void Update()
     {
+        
+
+        if (navMove.IsOnNavMesh(transform.position))
+        {
+            if(!onNav)
+            position_Fox = transform.position;
+            
+            if (onNav)
+            { 
+            onNav = false;
+                
+            }
+        }
+        else
+        {
+            if (!onNav)
+            {
+                onNav = true;
+            }
+        }
         //스테미너 회복
         if (!isSwing && !isDodgeing && Time.time >= lastActionTime + staminaRateDelay
             && nowStamina < maxStamina)
@@ -98,9 +123,13 @@ public class Fox_Move : MonoBehaviour
 
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical).normalized;
-
+        //Vector3 newPosition = /*transform.position +*/ movement * moveSpeed * Time.deltaTime;
+        Vector3 newPosition = movement * moveSpeed * Time.deltaTime;
         // 이동 처리
-        rb.MovePosition(transform.position + movement * moveSpeed * Time.deltaTime);
+        //rb.MovePosition(transform.position + movement * moveSpeed * Time.deltaTime);
+        rb.MovePosition(rb.position + newPosition);
+        //transform.Translate(newPosition);
+
 
         // 플레이어 회전 처리
         if (movement != Vector3.zero && !animator.GetBool("isFocus"))
@@ -154,6 +183,27 @@ public class Fox_Move : MonoBehaviour
 
 
 
+    }
+    private void OnAnimatorMove()
+    {
+        if (animator.applyRootMotion)
+        {
+
+            Vector3 newPosition = animator.rootPosition;
+            rb.AddForce(Vector3.down * 5, ForceMode.Acceleration);
+            newPosition.y = rb.position.y;
+            rb.position = newPosition;
+        }
+    }
+
+    private void LateUpdate()
+    {
+        
+        if (onNav)
+        {
+            transform.position = position_Fox;
+        }
+        
     }
 
     //애니메이션 이벤트클립
@@ -231,4 +281,3 @@ public class Fox_Move : MonoBehaviour
 
 
 }
-
