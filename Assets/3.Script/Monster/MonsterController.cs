@@ -153,6 +153,7 @@ public class MonsterController : MonoBehaviour
         {
 
             Vector3 movement = target.position - transform.position;
+            movement = new Vector3(movement.x, 0, movement.z);
             //Debug.Log(Vector3.Angle(transform.forward, movement));
             if (Vector3.Angle(transform.forward, movement) > 10)
             {
