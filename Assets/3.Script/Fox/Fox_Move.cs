@@ -239,7 +239,7 @@ public class Fox_Move : MonoBehaviour
     {
         HPPotion.SetActive(true);
         Sword.SetActive(false);
-        moveSpeed = 15;
+        moveSpeed = 3.5f;
         Particle_Potion.Play();//파티클 재생
     }
 
@@ -247,7 +247,7 @@ public class Fox_Move : MonoBehaviour
     {
         HPPotion.SetActive(false);
         Sword.SetActive(true);
-        moveSpeed = 30f;
+        moveSpeed = 7f;
         animator.SetBool("isPotion", false);
 
     }
