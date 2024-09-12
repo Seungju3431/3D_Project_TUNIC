@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Fox_manage : MonoBehaviour
 {
+    [SerializeField] private GameObject Spacebar;
+    
+
     public int maxHealth;
     public int curHealth;
 
     private Animator ani;
 
+
     private bool isHurt = false;
+    public bool isInteraction = false;
 
     private void Awake()
     {
+        
         ani = GetComponent<Animator>();
         if (ani == null)
         {
@@ -35,6 +41,22 @@ public class Fox_manage : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Interaction"))
+        {
+            Animator space_ani = Spacebar.GetComponent<Animator>();
+            Spacebar.transform.position = Camera.main.WorldToScreenPoint(other.transform.position + Vector3.up * 2f);
+            Spacebar.SetActive(true);
+            space_ani.SetTrigger("spacebar_Start");
+
+            if (other.CompareTag("Ladder"))
+            {
+                if (isInteraction && Input.GetKeyDown(KeyCode.Space))
+                {
+                    isInteraction = true;
+                    ani.SetBool("isClimb", true);
+                }
+            }
+        }
 
         if (other.CompareTag("Monster_Attack"))
         {
@@ -52,5 +74,20 @@ public class Fox_manage : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Interaction"))
+        {
+            
+            Spacebar.SetActive(false);
+            //isInteraction = false;
+
+            //if (other.CompareTag("Ladder"))
+            //{ 
+
+            //}
+        }
+    }
+
+
 }

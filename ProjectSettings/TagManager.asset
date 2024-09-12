@@ -8,6 +8,7 @@ TagManager:
   - Fox
   - Sword
   - Monster_Attack
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Fox_Sword
   - Wall
   - 
-  - 
+  - Spacebar
   - 
   - 
   - 
@@ -44,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Effect
+    uniqueID: 62337595
     locked: 0

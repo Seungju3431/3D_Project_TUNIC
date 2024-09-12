@@ -8,8 +8,9 @@ public class Fox_Move : MonoBehaviour
     private Animator animator;
     private GameObject targetMonster;
     private Nav_Move navMove;
+    private Fox_manage fox_Manage;
     private Vector3 position_Fox;
-    private bool onNav = false;
+
 
     [SerializeField] public float moveSpeed;
     [SerializeField] public float rotationSpeed;
@@ -25,6 +26,7 @@ public class Fox_Move : MonoBehaviour
     private float staminaRateDelay = 1.5f;
     private float lastActionTime = 0f;//공격시간 저장
 
+    private bool onNav = false;
     private bool isDodgeing = false;
     private bool isDodgeLessing = false;
     private bool isSwing = false;
@@ -37,13 +39,15 @@ public class Fox_Move : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         isInput = true;
         navMove = GetComponent<Nav_Move>();
-    }
-
-    private void FixedUpdate()
-    {
-        //rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+        fox_Manage = GetComponent<Fox_manage>();
         
     }
+
+    //private void FixedUpdate()
+    //{
+    //    //rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+        
+    //}
 
     private void Update()
     {
@@ -67,6 +71,8 @@ public class Fox_Move : MonoBehaviour
                 onNav = true;
             }
         }
+
+
         //스테미너 회복
         if (!isSwing && !isDodgeing && Time.time >= lastActionTime + staminaRateDelay
             && nowStamina < maxStamina)
@@ -78,8 +84,6 @@ public class Fox_Move : MonoBehaviour
             }
             //Debug.Log("현재 스테미나" + nowStamina);
         }
-
-
 
         Focus_Monster();
 
@@ -112,7 +116,7 @@ public class Fox_Move : MonoBehaviour
         }
 
         //공격
-        if (isInput && Input.GetKeyDown(KeyCode.J))
+        if (isInput && Input.GetKeyDown(KeyCode.J) && !fox_Manage.isInteraction)
         {
             isSwing = true;
             animator.SetTrigger("swing_sword");
@@ -132,7 +136,7 @@ public class Fox_Move : MonoBehaviour
 
 
         // 플레이어 회전 처리
-        if (movement != Vector3.zero && !animator.GetBool("isFocus"))
+        if (movement != Vector3.zero && !animator.GetBool("isFocus") && !fox_Manage.isInteraction)
         {
             Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
@@ -141,7 +145,7 @@ public class Fox_Move : MonoBehaviour
 
 
         //구르기
-        if (isInput && Input.GetKeyDown(KeyCode.Space))
+        if (isInput && Input.GetKeyDown(KeyCode.Space) && !fox_Manage.isInteraction)
         {
             if (nowStamina >= dodge_Stamina)
             {
@@ -156,7 +160,7 @@ public class Fox_Move : MonoBehaviour
         }
 
         //스테미너 0 일 때, 구르기
-        if (nowStamina <= 9 && isInput && Input.GetKeyDown(KeyCode.Space))
+        if (nowStamina <= 9 && isInput && Input.GetKeyDown(KeyCode.Space) && !fox_Manage.isInteraction)
         {
             Debug.Log("스테미너가 부족합니다.");
             isDodgeLessing = true;
@@ -166,13 +170,13 @@ public class Fox_Move : MonoBehaviour
         }
 
         //달리기
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && !fox_Manage.isInteraction)
         {
             animator.SetBool("isSprint", true);
         }
 
         //HP 포션
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && !fox_Manage.isInteraction)
         {
             //animator.SetLayerWeight(1, 0.78f);
             animator.SetBool("isPotion", true);
@@ -180,7 +184,7 @@ public class Fox_Move : MonoBehaviour
         }
 
 
-
+        
 
 
     }
@@ -195,7 +199,7 @@ public class Fox_Move : MonoBehaviour
             rb.position = newPosition;
         }
     }
-
+    
     private void LateUpdate()
     {
         
@@ -258,6 +262,8 @@ public class Fox_Move : MonoBehaviour
         isDodgeing = false;
         isDodgeLessing = false;
     }
+
+    //집중상태
     private void Focus_Monster()
     {
         if (animator.GetBool("isFocus") && targetMonster != null)
