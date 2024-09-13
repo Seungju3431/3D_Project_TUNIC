@@ -15,14 +15,4 @@ public class Nav_Move : MonoBehaviour
 
     }
 
-    ////루트 모션 위치 업데이트
-    //public Vector3 ToNavMesh(Vector3 position)
-    //{
-    //    NavMeshHit hit;
-    //    if (NavMesh.SamplePosition(position, out hit, 0.5f, NavMesh.AllAreas))
-    //    {
-    //        return hit.position;
-    //    }
-    //    return position;
-    //}
 }

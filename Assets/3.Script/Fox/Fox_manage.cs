@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class Fox_manage : MonoBehaviour
 {
-    [SerializeField] private GameObject Spacebar;
-    
-
+    public GameObject Spacebar;
+    private Fox_Move fox_Move;
     public int maxHealth;
     public int curHealth;
 
     private Animator ani;
-
+    private Collider ladder_Pcol;
+    private Vector3 LadderPosition_Bottom;
+    private Rigidbody rb;
+    
 
     private bool isHurt = false;
-    public bool isInteraction = false;
+    public bool isInteraction;
+    public bool isClimbing = false;
 
     private void Awake()
     {
-        
+        rb = GetComponent<Rigidbody>();
         ani = GetComponent<Animator>();
         if (ani == null)
         {
@@ -28,6 +31,7 @@ public class Fox_manage : MonoBehaviour
 
     private void Start()
     {
+        fox_Move = GetComponent<Fox_Move>();
         curHealth = maxHealth;
     }
 
@@ -38,23 +42,51 @@ public class Fox_manage : MonoBehaviour
             isHurt = false;
         }
         
+        
+            
+
+        if (ladder_Pcol != null)
+        {
+            //사다리 올라가기
+            if (Input.GetKeyDown(KeyCode.Space) && isInteraction && Spacebar.activeSelf && !rb.isKinematic)
+            {
+                FoxToLadder();
+                isClimbing = true;
+                Spacebar.SetActive(false);
+                ani.SetBool("isClimb", true);
+                
+            }
+        }
+        else
+        {
+            ani.SetBool("isClimb", false);
+            isClimbing = false;
+        }
     }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Interaction"))
         {
             Animator space_ani = Spacebar.GetComponent<Animator>();
+            ladder_Pcol = other;
             Spacebar.transform.position = Camera.main.WorldToScreenPoint(other.transform.position + Vector3.up * 2f);
             Spacebar.SetActive(true);
             space_ani.SetTrigger("spacebar_Start");
+            isInteraction = true;
 
+            //사다리
             if (other.CompareTag("Ladder"))
             {
-                if (isInteraction && Input.GetKeyDown(KeyCode.Space))
+                Collider ladder_Pcol = other.transform.parent.GetComponent<BoxCollider>();
+                if (ladder_Pcol != null)
                 {
-                    isInteraction = true;
-                    ani.SetBool("isClimb", true);
+                    LadderPosition_Bottom = ladder_Pcol.bounds.center;
                 }
+                Debug.Log("Ladder Position Bottom: " + LadderPosition_Bottom);
+                
+
             }
         }
 
@@ -78,16 +110,37 @@ public class Fox_manage : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Interaction"))
         {
-            
             Spacebar.SetActive(false);
-            //isInteraction = false;
+            isInteraction = false;
 
-            //if (other.CompareTag("Ladder"))
-            //{ 
-
-            //}
+            if (other.CompareTag("Ladder"))
+            {
+                if (!isClimbing)
+                { 
+                
+                ladder_Pcol = null;
+                fox_Move.canMoveOutNav = true;
+                }
+                //isClimbing = false;
+            }
         }
     }
 
+    private void FoxToLadder()
+    {
+        fox_Move.canMoveOutNav = false;
+        Vector3 targetPosition = new Vector3(LadderPosition_Bottom.x, transform.position.y + 0.5f, LadderPosition_Bottom.z) ;
+        
+        if (rb != null)
+        {
+            transform.position = targetPosition;
+            
+            if (!rb.isKinematic)
+            {
+                rb.isKinematic = true;
+            }
+        }
+        //Debug.Log("위치이동" + targetPosition);
+    }
 
 }

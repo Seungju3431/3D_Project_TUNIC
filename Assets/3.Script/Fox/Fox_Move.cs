@@ -26,11 +26,12 @@ public class Fox_Move : MonoBehaviour
     private float staminaRateDelay = 1.5f;
     private float lastActionTime = 0f;//공격시간 저장
 
-    private bool onNav = false;
+    public bool canMoveOutNav;
+    public bool onNav = false;
     private bool isDodgeing = false;
     private bool isDodgeLessing = false;
     private bool isSwing = false;
-    private bool isInput;
+    public bool isInput;
 
 
     private void Start()
@@ -40,35 +41,38 @@ public class Fox_Move : MonoBehaviour
         isInput = true;
         navMove = GetComponent<Nav_Move>();
         fox_Manage = GetComponent<Fox_manage>();
-        
+
     }
 
     //private void FixedUpdate()
     //{
     //    //rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
-        
+
     //}
 
     private void Update()
     {
-        
 
-        if (navMove.IsOnNavMesh(transform.position))
+        if (canMoveOutNav)
         {
-            if(!onNav)
-            position_Fox = transform.position;
-            
-            if (onNav)
-            { 
-            onNav = false;
-                
-            }
-        }
-        else
-        {
-            if (!onNav)
+
+            if (navMove.IsOnNavMesh(transform.position))
             {
-                onNav = true;
+                if (!onNav)
+                    position_Fox = transform.position;
+
+                if (onNav)
+                {
+                    onNav = false;
+
+                }
+            }
+            else
+            {
+                if (!onNav)
+                {
+                    onNav = true;
+                }
             }
         }
 
@@ -87,11 +91,15 @@ public class Fox_Move : MonoBehaviour
 
         Focus_Monster();
 
+
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
         animator.SetFloat("move_right", moveHorizontal);
         animator.SetFloat("move_forward", moveVertical);
 
+        if (!fox_Manage.isClimbing)
+        { 
+        
         if (Input.GetKeyUp(KeyCode.Space)) //달리기 멈추기(Update 다시 돌아갈 때, 상단에서 제일 먼저 확인)
         {
             animator.SetBool("isSprint", false);
@@ -116,7 +124,7 @@ public class Fox_Move : MonoBehaviour
         }
 
         //공격
-        if (isInput && Input.GetKeyDown(KeyCode.J) && !fox_Manage.isInteraction)
+        if (isInput && Input.GetKeyDown(KeyCode.J) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
         {
             isSwing = true;
             animator.SetTrigger("swing_sword");
@@ -136,7 +144,7 @@ public class Fox_Move : MonoBehaviour
 
 
         // 플레이어 회전 처리
-        if (movement != Vector3.zero && !animator.GetBool("isFocus") && !fox_Manage.isInteraction)
+        if (movement != Vector3.zero && !animator.GetBool("isFocus") && !fox_Manage.isClimbing)
         {
             Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
@@ -144,8 +152,11 @@ public class Fox_Move : MonoBehaviour
 
 
 
+
+
         //구르기
-        if (isInput && Input.GetKeyDown(KeyCode.Space) && !fox_Manage.isInteraction)
+        if (isInput && Input.GetKeyDown(KeyCode.Space)
+            && !fox_Manage.isInteraction && !fox_Manage.Spacebar.activeSelf && !fox_Manage.isClimbing)
         {
             if (nowStamina >= dodge_Stamina)
             {
@@ -160,7 +171,7 @@ public class Fox_Move : MonoBehaviour
         }
 
         //스테미너 0 일 때, 구르기
-        if (nowStamina <= 9 && isInput && Input.GetKeyDown(KeyCode.Space) && !fox_Manage.isInteraction)
+        if (nowStamina <= 9 && isInput && Input.GetKeyDown(KeyCode.Space) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
         {
             Debug.Log("스테미너가 부족합니다.");
             isDodgeLessing = true;
@@ -170,24 +181,21 @@ public class Fox_Move : MonoBehaviour
         }
 
         //달리기
-        if (Input.GetKey(KeyCode.Space) && !fox_Manage.isInteraction)
+        if (Input.GetKey(KeyCode.Space) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
         {
             animator.SetBool("isSprint", true);
         }
 
         //HP 포션
-        if (Input.GetKeyDown(KeyCode.P) && !fox_Manage.isInteraction)
+        if (Input.GetKeyDown(KeyCode.P) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
         {
             //animator.SetLayerWeight(1, 0.78f);
             animator.SetBool("isPotion", true);
 
         }
-
-
-        
-
-
+        }
     }
+
     private void OnAnimatorMove()
     {
         if (animator.applyRootMotion)
@@ -199,15 +207,15 @@ public class Fox_Move : MonoBehaviour
             rb.position = newPosition;
         }
     }
-    
+
     private void LateUpdate()
     {
-        
+
         if (onNav)
         {
             transform.position = position_Fox;
         }
-        
+
     }
 
     //애니메이션 이벤트클립
