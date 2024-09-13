@@ -98,102 +98,108 @@ public class Fox_Move : MonoBehaviour
         animator.SetFloat("move_forward", moveVertical);
 
         if (!fox_Manage.isClimbing)
-        { 
-        
-        if (Input.GetKeyUp(KeyCode.Space)) //달리기 멈추기(Update 다시 돌아갈 때, 상단에서 제일 먼저 확인)
-        {
-            animator.SetBool("isSprint", false);
-        }
-
-        //집중 상태
-        if (Input.GetKey(KeyCode.LeftShift))
         {
 
-            animator.SetBool("isFocus", true);
-
-            if (targetMonster != null && animator.GetBool("isFocus"))
+            if (Input.GetKeyUp(KeyCode.Space)) //달리기 멈추기(Update 다시 돌아갈 때, 상단에서 제일 먼저 확인)
             {
-                // 몬스터 방향으로 회전
-                Quaternion toRotation = Quaternion.LookRotation(targetMonster.transform.position - transform.position, Vector3.up);
+                animator.SetBool("isSprint", false);
+            }
+
+            //집중 상태
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+
+                animator.SetBool("isFocus", true);
+
+                if (targetMonster != null && animator.GetBool("isFocus"))
+                {
+                    // 몬스터 방향으로 회전
+                    Quaternion toRotation = Quaternion.LookRotation(targetMonster.transform.position - transform.position, Vector3.up);
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                }
+            }
+            else
+            {
+                animator.SetBool("isFocus", false);
+            }
+
+            //공격
+            if (isInput && Input.GetKeyDown(KeyCode.J) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
+            {
+                isSwing = true;
+                animator.SetTrigger("swing_sword");
+                lastActionTime = Time.time;
+            }
+
+            if (isDodgeing || isSwing || isDodgeLessing) return;
+
+
+            Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical).normalized;
+            //Vector3 newPosition = /*transform.position +*/ movement * moveSpeed * Time.deltaTime;
+            Vector3 newPosition = movement * moveSpeed * Time.deltaTime;
+            // 이동 처리
+            //rb.MovePosition(transform.position + movement * moveSpeed * Time.deltaTime);
+            rb.MovePosition(rb.position + newPosition);
+            //transform.Translate(newPosition);
+
+
+            // 플레이어 회전 처리
+            if (movement != Vector3.zero && !animator.GetBool("isFocus") && !fox_Manage.isClimbing)
+            {
+                Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            }
+
+
+
+
+
+            //구르기
+            if (isInput && Input.GetKeyDown(KeyCode.Space)
+                && !fox_Manage.isInteraction && !fox_Manage.Spacebar.activeSelf && !fox_Manage.isClimbing)
+            {
+                if (nowStamina >= dodge_Stamina)
+                {
+                    //animator.applyRootMotion = true;
+                    isDodgeing = true;
+                    isInput = false;
+                    nowStamina -= dodge_Stamina; //스테미너 소모
+                    animator.SetTrigger("dodge");
+                    lastActionTime = Time.time;
+                }
+
+            }
+
+            //스테미너 0 일 때, 구르기
+            if (nowStamina <= 9 && isInput && Input.GetKeyDown(KeyCode.Space) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
+            {
+                Debug.Log("스테미너가 부족합니다.");
+                isDodgeLessing = true;
+                isInput = false;
+                animator.SetTrigger("dodge_less");
+                lastActionTime = Time.time;
+            }
+
+            //달리기
+            if (Input.GetKey(KeyCode.Space) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
+            {
+                animator.SetBool("isSprint", true);
+            }
+
+            //HP 포션
+            if (Input.GetKeyDown(KeyCode.P) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
+            {
+                //animator.SetLayerWeight(1, 0.78f);
+                animator.SetBool("isPotion", true);
+
             }
         }
         else
         {
-            animator.SetBool("isFocus", false);
+            animator.SetFloat("climbSpeed", moveVertical * 2f);
+            transform.position += moveVertical * transform.up *Time.deltaTime * 4f;
         }
-
-        //공격
-        if (isInput && Input.GetKeyDown(KeyCode.J) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
-        {
-            isSwing = true;
-            animator.SetTrigger("swing_sword");
-            lastActionTime = Time.time;
-        }
-
-        if (isDodgeing || isSwing || isDodgeLessing) return;
-
-
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical).normalized;
-        //Vector3 newPosition = /*transform.position +*/ movement * moveSpeed * Time.deltaTime;
-        Vector3 newPosition = movement * moveSpeed * Time.deltaTime;
-        // 이동 처리
-        //rb.MovePosition(transform.position + movement * moveSpeed * Time.deltaTime);
-        rb.MovePosition(rb.position + newPosition);
-        //transform.Translate(newPosition);
-
-
-        // 플레이어 회전 처리
-        if (movement != Vector3.zero && !animator.GetBool("isFocus") && !fox_Manage.isClimbing)
-        {
-            Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-        }
-
-
-
-
-
-        //구르기
-        if (isInput && Input.GetKeyDown(KeyCode.Space)
-            && !fox_Manage.isInteraction && !fox_Manage.Spacebar.activeSelf && !fox_Manage.isClimbing)
-        {
-            if (nowStamina >= dodge_Stamina)
-            {
-                //animator.applyRootMotion = true;
-                isDodgeing = true;
-                isInput = false;
-                nowStamina -= dodge_Stamina; //스테미너 소모
-                animator.SetTrigger("dodge");
-                lastActionTime = Time.time;
-            }
-
-        }
-
-        //스테미너 0 일 때, 구르기
-        if (nowStamina <= 9 && isInput && Input.GetKeyDown(KeyCode.Space) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
-        {
-            Debug.Log("스테미너가 부족합니다.");
-            isDodgeLessing = true;
-            isInput = false;
-            animator.SetTrigger("dodge_less");
-            lastActionTime = Time.time;
-        }
-
-        //달리기
-        if (Input.GetKey(KeyCode.Space) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
-        {
-            animator.SetBool("isSprint", true);
-        }
-
-        //HP 포션
-        if (Input.GetKeyDown(KeyCode.P) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
-        {
-            //animator.SetLayerWeight(1, 0.78f);
-            animator.SetBool("isPotion", true);
-
-        }
-        }
+        
     }
 
     private void OnAnimatorMove()
