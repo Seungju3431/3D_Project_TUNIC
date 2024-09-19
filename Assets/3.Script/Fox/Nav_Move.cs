@@ -7,6 +7,7 @@ public class Nav_Move : MonoBehaviour
 {
 
     [SerializeField] public float checkRadiys;
+    //[SerializeField] public float maxHeight;
 
     public bool IsOnNavMesh(Vector3 position)
     {
@@ -14,5 +15,23 @@ public class Nav_Move : MonoBehaviour
         return NavMesh.SamplePosition(position, out hit, checkRadiys, NavMesh.AllAreas);
 
     }
+
+    //public bool IsOnNavMesh(Vector3 position, out float navMeshHeight)
+    //{
+    //    NavMeshHit hit;
+
+    //    if (NavMesh.SamplePosition(position, out hit, checkRadiys, NavMesh.AllAreas))
+    //    {
+    //        navMeshHeight = hit.position.y;
+
+    //        if (Mathf.Abs(position.y - hit.position.y) <= maxHeight)
+    //        {
+    //            return true;
+    //        }
+    //    }
+
+    //    navMeshHeight = 0;
+    //    return false;
+    //}
 
 }
