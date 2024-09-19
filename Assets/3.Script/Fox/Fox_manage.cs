@@ -12,6 +12,7 @@ public class Fox_manage : MonoBehaviour
     private Animator ani;
     private Collider ladder_Pcol;
     private Vector3 LadderPosition_Bottom;
+    private Vector3 LadderPosition_Up;
     private Rigidbody rb;
     
 
@@ -63,8 +64,10 @@ public class Fox_manage : MonoBehaviour
                 if (isClimb_Down)
                 {
                     FoxToLadder_Down();
-                    ani.SetBool("isClimb_On", true);
-                    
+                    ani.SetTrigger("isClimb_On");
+                    isClimbing = true;
+                    ani.SetBool("isClimb", true);
+
                 }
                
             }
@@ -104,13 +107,18 @@ public class Fox_manage : MonoBehaviour
                 }
                 if (other.CompareTag("Ladder_Down"))
                 {
+                    Collider ladder_Pcol = other.GetComponent<BoxCollider>();
+                    if (ladder_Pcol != null)
+                    {
+                        LadderPosition_Up = ladder_Pcol.bounds.center;
+                    }
                     isClimb_Down = true;
                 }
             }
             else
             {
                 //사다리_Down
-                if (other.CompareTag("Ladder_Down"))
+                if (other.CompareTag("Ladder_Finish"))
                 {
                     Debug.Log("d");
                     if (isClimbing && rb.isKinematic)
@@ -157,6 +165,7 @@ public class Fox_manage : MonoBehaviour
             Spacebar.SetActive(false);
             isInteraction = false;
             }
+            
         }
     }
 
@@ -183,15 +192,12 @@ public class Fox_manage : MonoBehaviour
     private void FoxToLadder_Down()
     {
         fox_Move.canMoveOutNav = false;
-        
-        if (rb != null)
-        {
-           
-            if (!rb.isKinematic)
-            {
-                rb.isKinematic = true;
-            }
-        }
+        Vector3 targetPosition = new Vector3(LadderPosition_Up.x, transform.position.y + 0.5f, LadderPosition_Up.z);
+        Vector3 targetRotation = ladder_Pcol.transform.forward;
+
+        transform.position = targetPosition;
+        transform.rotation = Quaternion.LookRotation(targetRotation);
+
     }
 
     //사다리 착지(아래)
@@ -212,6 +218,7 @@ public class Fox_manage : MonoBehaviour
                 rb.isKinematic = false;
                 fox_Move.canMoveOutNav = true;
                 isClimb_Up = false;
+                isClimb_Down = false;
             }
         }
         Debug.DrawRay(ray, Vector3.down * rayDistance, Color.red);
@@ -224,5 +231,10 @@ public class Fox_manage : MonoBehaviour
         {
             fox_Move.canMoveOutNav = true;
         }
+    }
+
+    public void Ladder_DownStart()
+    {
+        rb.isKinematic = true;
     }
 }
