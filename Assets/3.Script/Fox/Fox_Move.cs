@@ -208,9 +208,14 @@ public class Fox_Move : MonoBehaviour
         {
 
             Vector3 newPosition = animator.rootPosition;
-            rb.AddForce(Vector3.down * 5, ForceMode.Acceleration);
-            newPosition.y = rb.position.y;
+            Quaternion newRotation = animator.rootRotation;
+            if (rb.isKinematic)
+            {
+                rb.AddForce(Vector3.down * 5, ForceMode.Acceleration);
+                newPosition.y = rb.position.y;
+            }
             rb.position = newPosition;
+            rb.rotation = newRotation;
         }
     }
 
