@@ -19,11 +19,7 @@ public class Fox_Move : MonoBehaviour
     [SerializeField] public ParticleSystem Particle_Potion;
     [SerializeField] public ParticleSystem Particle_DodgeLess;
 
-    private float maxStamina = 40f; //스테미너 최대
-    private float nowStamina = 40f; //현재 스테미너
-    private float dodge_Stamina = 10f; //구르기 소모 스테미너
-    private float staminaRate = 20f; //스테미너 회복
-    private float staminaRateDelay = 1.5f;
+    
     private float lastActionTime = 0f;//공격시간 저장
 
     public bool canMoveOutNav;
@@ -32,6 +28,7 @@ public class Fox_Move : MonoBehaviour
     private bool isDodgeLessing = false;
     private bool isSwing = false;
     public bool isInput;
+    private bool canRecoverStamina = true;
 
 
     private void Start()
@@ -75,19 +72,29 @@ public class Fox_Move : MonoBehaviour
                 }
             }
         }
-
-
-        //스테미너 회복
-        if (!isSwing && !isDodgeing && Time.time >= lastActionTime + staminaRateDelay
-            && nowStamina < maxStamina)
+        
+        //스테미나 회복
+        if (canRecoverStamina && FoxManager.Instance.nowStamina < FoxManager.Instance.maxStamina)
         {
-            nowStamina += staminaRate * Time.deltaTime;
-            if (nowStamina > maxStamina)
+            FoxManager.Instance.nowStamina += FoxManager.Instance.staminaRate * Time.deltaTime;
+            if (FoxManager.Instance.nowStamina > FoxManager.Instance.maxStamina)
             {
-                nowStamina = maxStamina;
+                FoxManager.Instance.nowStamina = FoxManager.Instance.maxStamina;
             }
-            //Debug.Log("현재 스테미나" + nowStamina);
         }
+        //FoxManager.Instance.RecoverStamina(Time.deltaTime);
+        
+        ////스테미너 회복
+        //if (!isSwing && !isDodgeing && Time.time >= lastActionTime + staminaRateDelay
+        //    && nowStamina < maxStamina)
+        //{
+        //    nowStamina += staminaRate * Time.deltaTime;
+        //    if (nowStamina > maxStamina)
+        //    {
+        //        nowStamina = maxStamina;
+        //    }
+        //    //Debug.Log("현재 스테미나" + nowStamina);
+        //}
 
         Focus_Monster();
 
@@ -156,22 +163,31 @@ public class Fox_Move : MonoBehaviour
 
             //구르기
             if (isInput && Input.GetKeyDown(KeyCode.Space)
-                && !fox_Manage.isInteraction && !fox_Manage.Spacebar.activeSelf && !fox_Manage.isClimbing)
+                && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
             {
-                if (nowStamina >= dodge_Stamina)
+                if (FoxManager.Instance.nowStamina >= FoxManager.Instance.dodge_Stamina)
                 {
-                    //animator.applyRootMotion = true;
                     isDodgeing = true;
                     isInput = false;
-                    nowStamina -= dodge_Stamina; //스테미너 소모
+                    FoxManager.Instance.nowStamina -= FoxManager.Instance.dodge_Stamina; // 스테미너 소모
+                    lastActionTime = Time.deltaTime;
+                    canRecoverStamina = false;
                     animator.SetTrigger("dodge");
+                    Invoke("StaminaRecovery", FoxManager.Instance.staminaRateDelay);
+                    //lastActionTime = Time.time;
+                }
+                else
+                {
+                    Debug.Log("스테미너가 부족합니다.");
+                    isDodgeLessing = true;
+                    isInput = false;
+                    animator.SetTrigger("dodge_less");
                     lastActionTime = Time.time;
                 }
-
             }
 
             //스테미너 0 일 때, 구르기
-            if (nowStamina <= 9 && isInput && Input.GetKeyDown(KeyCode.Space) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
+            if (FoxManager.Instance.nowStamina <= 9 && isInput && Input.GetKeyDown(KeyCode.Space) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
             {
                 Debug.Log("스테미너가 부족합니다.");
                 isDodgeLessing = true;
@@ -304,5 +320,8 @@ public class Fox_Move : MonoBehaviour
         }
     }
 
-
+    private void StaminaRecovery()
+    {
+        canRecoverStamina = true;
+    }
 }

@@ -6,14 +6,23 @@ using UnityEngine;
 public class FoxManager : MonoBehaviour
 {
     public static FoxManager Instance { get; private set; }
+    private Animator ani;
 
+    //체력관련
     public int maxHealth = 10;
     public int currentHealth;
     private bool isHurt = false;
-    private Animator ani;
 
-    //HP변화 때, UI컴포넌트에 알리기 위해
+    //스테미너 관련
+    public float maxStamina = 40f; //스테미너 최대
+    public float nowStamina = 40f; //현재 스테미너
+    public float dodge_Stamina = 10f; //구르기 소모 스테미너
+    public float staminaRate = 20f; //스테미너 회복
+    public float staminaRateDelay = 1.5f;
+
+    //HP,Stamina변화 때, UI컴포넌트에 알리기 위해
     public event Action<int, int> OnHealthChanged;
+    public event Action<float, float> OnStaminaChanged;
 
     private void Awake()
     {
@@ -35,6 +44,9 @@ public class FoxManager : MonoBehaviour
     {
         currentHealth = maxHealth;
         OnHealthChanged?.Invoke(currentHealth, maxHealth);
+
+        nowStamina = maxStamina;
+        OnStaminaChanged?.Invoke(nowStamina, maxStamina);
     }
 
     private void Update()
@@ -43,7 +55,10 @@ public class FoxManager : MonoBehaviour
         {
             isHurt = false;
         }
+
+        RecoverStamina(Time.deltaTime);
     }
+    
     //public void TakeDamage(int damage)
     //{
     //    currentHealth -= damage;
@@ -73,6 +88,18 @@ public class FoxManager : MonoBehaviour
         ani.SetTrigger("die");
     }
 
+    public void RecoverStamina(float deltaTime)
+    {
+        if (nowStamina < maxStamina)
+        {
+            nowStamina += staminaRate * deltaTime;
+            if (nowStamina > maxStamina)
+            {
+                nowStamina = maxStamina;
+            }
+            OnStaminaChanged?.Invoke(nowStamina, maxStamina);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Monster_Attack"))
