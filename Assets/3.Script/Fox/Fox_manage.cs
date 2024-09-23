@@ -6,8 +6,8 @@ public class Fox_manage : MonoBehaviour
 {
     public GameObject Spacebar;
     private Fox_Move fox_Move;
-    public int maxHealth;
-    public int curHealth;
+    //public int maxHealth;
+    //public int curHealth;
 
     private Animator ani;
     private Collider ladder_Pcol;
@@ -16,7 +16,7 @@ public class Fox_manage : MonoBehaviour
     private Rigidbody rb;
     
 
-    private bool isHurt = false;
+    //private bool isHurt = false;
     public bool isInteraction;
     public bool isClimbing = false;
     //사다리 위/아래 구분
@@ -36,15 +36,15 @@ public class Fox_manage : MonoBehaviour
     private void Start()
     {
         fox_Move = GetComponent<Fox_Move>();
-        curHealth = maxHealth;
+        
     }
 
     private void Update()
     {
-        if (isHurt)
-        {
-            isHurt = false;
-        }
+        //if (isHurt)
+        //{
+        //    isHurt = false;
+        //}
         
 
         if (ladder_Pcol != null)
@@ -139,20 +139,20 @@ public class Fox_manage : MonoBehaviour
         }
 
 
-        if (other.CompareTag("Monster_Attack"))
-        {
-            MonsterController monster_Attack = other.transform.parent.GetComponent<MonsterController>();
-            curHealth -= monster_Attack.damage;
-            Debug.Log("현재체력 : " + curHealth);
-            ani.SetTrigger("hurt");
-            isHurt = true;
-            Fox_Move fox_Move = GetComponent<Fox_Move>();
-            fox_Move.Hurt_Bool();
-            if (curHealth == 0)
-            {
-                ani.SetTrigger("die");
-            }
-        }
+        //if (other.CompareTag("Monster_Attack"))
+        //{
+        //    MonsterController monster_Attack = other.transform.parent.GetComponent<MonsterController>();
+        //    curHealth -= monster_Attack.skulData.damage;
+        //    Debug.Log("현재체력 : " + curHealth);
+        //    ani.SetTrigger("hurt");
+        //    isHurt = true;
+        //    Fox_Move fox_Move = GetComponent<Fox_Move>();
+        //    fox_Move.Hurt_Bool();
+        //    if (curHealth == 0)
+        //    {
+        //        ani.SetTrigger("die");
+        //    }
+        //}
     }
 
     private void OnTriggerExit(Collider other)

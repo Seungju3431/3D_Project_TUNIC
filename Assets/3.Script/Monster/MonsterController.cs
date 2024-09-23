@@ -5,15 +5,11 @@ using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour
 {
+    public SkulSo skulData;
+
     [SerializeField] public GameObject fx_Hit;
     [SerializeField] public Transform target;
-    public float targetDistance;
-    public float hitDistance;
-
-    public int damage;
-    public int maxHealth;
-    public int curHealth;
-
+    
     private bool isHurting;
     private bool isAttacking;
 
@@ -57,7 +53,7 @@ public class MonsterController : MonoBehaviour
 
             float distanceToFox = Vector3.Distance(transform.position, target.position);
 
-            if (distanceToFox <= hitDistance && controll_co_A == null)
+            if (distanceToFox <= skulData.hitDistance && controll_co_A == null)
             {
                 if (controll_co_I != null)
                 {
@@ -76,7 +72,7 @@ public class MonsterController : MonoBehaviour
                 //Debug.Log("들어왔니?");
 
             }
-            else if (distanceToFox <= targetDistance && controll_co_W == null && controll_co_A == null)
+            else if (distanceToFox <= skulData.targetDistance && controll_co_W == null && controll_co_A == null)
             {
                 if (controll_co_I != null)
                 {
@@ -86,7 +82,7 @@ public class MonsterController : MonoBehaviour
                 controll_co_W = StartCoroutine(Walk_co());
                 // Debug.Log("추적 시작");
             }
-            else if (distanceToFox > targetDistance && controll_co_I == null)
+            else if (distanceToFox > skulData.targetDistance && controll_co_I == null)
             {
                 if (controll_co_W != null)
                 {
@@ -195,8 +191,8 @@ public class MonsterController : MonoBehaviour
         {
             other.TryGetComponent(out Sword sword);
             //이미션
-            curHealth -= sword.damage;
-            Debug.Log("Sword : " + curHealth);
+            skulData.curHealth -= sword.damage;
+            Debug.Log("Sword : " + skulData.curHealth);
             if (((1 << other.gameObject.layer) & (1 << 7)) != 0)
             {
                 //플레이어의 콜라이더 중심과 몬스터의 콜라이더 중심 찾기

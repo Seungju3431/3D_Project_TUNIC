@@ -289,6 +289,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -296,10 +308,10 @@ TextureImporter:
       name: game gui_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 560
-        width: 316
-        height: 464
+        x: 8
+        y: 602
+        width: 183
+        height: 398
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -485,13 +497,13 @@ TextureImporter:
       name: game gui_9
       rect:
         serializedVersion: 2
-        x: 320
-        y: 948
-        width: 8
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        x: 205
+        y: 855
+        width: 110
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5017667, y: 0.0008559227}
+      border: {x: 0, y: 31, z: 0, w: 64}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1409,12 +1421,12 @@ TextureImporter:
       name: game gui_55
       rect:
         serializedVersion: 2
-        x: 192
-        y: 58
-        width: 89
-        height: 59
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 193
+        y: 56
+        width: 86
+        height: 61
+      alignment: 9
+      pivot: {x: 0.49999982, y: 0.004163711}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1472,9 +1484,9 @@ TextureImporter:
       name: game gui_59
       rect:
         serializedVersion: 2
-        x: 280
+        x: 287
         y: 3
-        width: 96
+        width: 89
         height: 77
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
