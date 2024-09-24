@@ -7,24 +7,37 @@ using LitJson;
 
 public class SaveSystem : MonoBehaviour
 {
+    public static SaveSystem Instance { get; private set; }
     private string savePath;
+    //public GameObject fox;
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
         savePath = Application.persistentDataPath + "/savefile.json";
     }
 
-    public void SaveGame(JsonData data)
+    public void SaveData(JsonData data)
     {
-        //데이터 JSON 형식으로 변환
-        string jsonData = JsonMapper.ToJson(data);
-
-        //JSON 데이터 파일로 저장
-        File.WriteAllText(savePath, jsonData);
-        Debug.Log("게임저장 완료");
+        
+            string jsonData = JsonMapper.ToJson(data);
+            Debug.Log("Saving Data: " + jsonData);
+            File.WriteAllText(savePath, jsonData);
+            Debug.Log("게임저장 완료");
+        
+        
     }
 
-    public JsonData LoadGame()
+    public JsonData LoadData()
     {
         //파일 존재 확인
         if (File.Exists(savePath))
@@ -41,6 +54,18 @@ public class SaveSystem : MonoBehaviour
         {
             Debug.Log("저장 데이터 찾지 못 함");
             return null;
+        }
+    }
+
+    public void LoadGame()
+    {
+        JsonData loadData = SaveSystem.Instance.LoadData();
+
+        if (loadData != null)
+        {
+            //저장된 위치를 Vector3로 변환
+            Vector3 foxPostion = loadData.ToVector3();
+            //fox.transform.position = foxPostion;
         }
     }
 }

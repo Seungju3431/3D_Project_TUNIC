@@ -2,6 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FoxManager : MonoBehaviour
 {
@@ -119,6 +120,29 @@ public class FoxManager : MonoBehaviour
             if (currentHealth <= 0)
             {
                 Die();
+            }
+        }
+
+        if (other.CompareTag("CheckPoint"))
+        {
+            Vector3 savePosition = other.transform.position;
+
+            //JSON 객체 생성
+            JsonData data = new JsonData(savePosition)
+            {
+                sceneName = SceneManager.GetActiveScene().name
+
+            };
+
+            if (SaveSystem.Instance != null)
+            {
+                SaveSystem.Instance.SaveData(data);
+                Debug.Log("Save attempted."); // 이 로그도 추가
+                Debug.Log("Save successful.");
+            }
+            else
+            {
+                Debug.LogError("SaveSystem.Instance is null!");
             }
         }
     }
