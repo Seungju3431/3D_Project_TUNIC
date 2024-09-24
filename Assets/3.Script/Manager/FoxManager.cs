@@ -56,7 +56,8 @@ public class FoxManager : MonoBehaviour
             isHurt = false;
         }
 
-        RecoverStamina(Time.deltaTime);
+        //RecoverStamina(Time.deltaTime);
+        OnStaminaChanged?.Invoke(nowStamina, maxStamina);
     }
     
     //public void TakeDamage(int damage)

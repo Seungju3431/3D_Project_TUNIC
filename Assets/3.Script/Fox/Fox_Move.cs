@@ -28,7 +28,7 @@ public class Fox_Move : MonoBehaviour
     private bool isDodgeLessing = false;
     private bool isSwing = false;
     public bool isInput;
-    private bool canRecoverStamina = true;
+    //private bool canRecoverStamina = true;
 
 
     private void Start()
@@ -74,9 +74,13 @@ public class Fox_Move : MonoBehaviour
         }
         
         //스테미나 회복
-        if (canRecoverStamina && FoxManager.Instance.nowStamina < FoxManager.Instance.maxStamina)
+        //if (canRecoverStamina && !isSwing && !isDodgeing && FoxManager.Instance.nowStamina < FoxManager.Instance.maxStamina)
+        if(!isSwing && !isDodgeing && Time.time >= lastActionTime + FoxManager.Instance.staminaRateDelay
+            && FoxManager.Instance.nowStamina < FoxManager.Instance.maxStamina)
         {
+            Debug.Log("스테미나 회복");
             FoxManager.Instance.nowStamina += FoxManager.Instance.staminaRate * Time.deltaTime;
+
             if (FoxManager.Instance.nowStamina > FoxManager.Instance.maxStamina)
             {
                 FoxManager.Instance.nowStamina = FoxManager.Instance.maxStamina;
@@ -171,9 +175,8 @@ public class Fox_Move : MonoBehaviour
                     isInput = false;
                     FoxManager.Instance.nowStamina -= FoxManager.Instance.dodge_Stamina; // 스테미너 소모
                     lastActionTime = Time.deltaTime;
-                    canRecoverStamina = false;
                     animator.SetTrigger("dodge");
-                    Invoke("StaminaRecovery", FoxManager.Instance.staminaRateDelay);
+                    //Invoke("StaminaRecovery", FoxManager.Instance.staminaRateDelay);
                     //lastActionTime = Time.time;
                 }
                 else
@@ -320,8 +323,5 @@ public class Fox_Move : MonoBehaviour
         }
     }
 
-    private void StaminaRecovery()
-    {
-        canRecoverStamina = true;
-    }
+  
 }
