@@ -14,6 +14,14 @@ public class JsonData
     // 인벤토리
     public List<string> inventoryItem = new List<string>();
 
+
+    public JsonData()
+    {
+        position = new double[3];
+        progress = "";
+        sceneName = "";
+        inventoryItem = new List<string>();
+    }
     public JsonData(Vector3 vector3)
     {
         position = new double[] { vector3.x, vector3.y, vector3.z };

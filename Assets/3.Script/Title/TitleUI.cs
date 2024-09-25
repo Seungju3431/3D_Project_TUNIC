@@ -31,6 +31,10 @@ public class TitleUI : MonoBehaviour
             {
                 StartNewGame();
             }
+            else if (seleckedIndex == 1)
+            {
+                LoadGame();
+            }
         }
     }
     private void MoveUP()
@@ -61,5 +65,10 @@ public class TitleUI : MonoBehaviour
     public void StartNewGame()
     {
         SceneManager.LoadScene("World 1");   
+    }
+
+    public void LoadGame()
+    {
+        SaveSystem.Instance.LoadGame();
     }
 }

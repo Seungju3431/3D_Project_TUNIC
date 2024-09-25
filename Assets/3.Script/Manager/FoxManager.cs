@@ -24,13 +24,16 @@ public class FoxManager : MonoBehaviour
     //HP,Stamina변화 때, UI컴포넌트에 알리기 위해
     public event Action<int, int> OnHealthChanged;
     public event Action<float, float> OnStaminaChanged;
+    
 
+    
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            
         }
         else
         {
@@ -48,6 +51,8 @@ public class FoxManager : MonoBehaviour
 
         nowStamina = maxStamina;
         OnStaminaChanged?.Invoke(nowStamina, maxStamina);
+
+        Debug.Log(gameObject.transform.position);
     }
 
     private void Update()
@@ -57,7 +62,6 @@ public class FoxManager : MonoBehaviour
             isHurt = false;
         }
 
-        //RecoverStamina(Time.deltaTime);
         OnStaminaChanged?.Invoke(nowStamina, maxStamina);
     }
     
