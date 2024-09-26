@@ -33,3 +33,25 @@ public class JsonData
         return new Vector3((float)position[0], (float)position[1], (float)position[2]);
     }
 }
+
+[System.Serializable]
+public class StateData
+{
+    public string boxID; //상자 고유 ID(씬 이름 + 상자 이름)
+    public bool isOpen_Box; //상자 열렸는지 여부
+
+    public string doorID;
+    public bool isOpen_Door; //문 열렸는지 여부
+}
+
+[System.Serializable]
+public class BoxDataList
+{
+    public List<StateData> boxDataList = new List<StateData>();
+}
+
+[System.Serializable]
+public class DoorDataList
+{
+    public List<StateData> doorDataList = new List<StateData>();
+}

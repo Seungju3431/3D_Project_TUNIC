@@ -5,6 +5,7 @@ using UnityEngine;
 public class FoxSpawner : MonoBehaviour
 {
     public GameObject foxPrefab;
+    public GameObject spacebar;
     public Transform spawnPoint;
     public MonsterSpawner monsterSpawner;
     public CinemachineController virtualCamera;
@@ -22,6 +23,11 @@ public class FoxSpawner : MonoBehaviour
     {
         GameObject obj = Instantiate(foxPrefab, spawnPoint.position, spawnPoint.rotation);
         obj.GetComponent<Fox_Move>().Initialize();
+        Fox_manage foxmanage = obj.GetComponent<Fox_manage>();
+        if (foxmanage != null)
+        {
+            foxmanage.SetSpacebar(spacebar);
+        }
         if (virtualCamera != null)
         {
             

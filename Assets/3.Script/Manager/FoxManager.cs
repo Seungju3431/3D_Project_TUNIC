@@ -55,6 +55,8 @@ public class FoxManager : MonoBehaviour
         fox_Move = GetComponent<Fox_Move>();
         
     }
+
+    
     //private void OnDestroy()
     //{
     //    SceneManager.sceneLoaded -= OnSceneLoaded; // 씬 로드 이벤트 구독 해제
@@ -73,7 +75,7 @@ public class FoxManager : MonoBehaviour
         Debug.Log(gameObject.transform.position);
             
     }
-
+    
     private void Update()
     {
         if (isHurt)

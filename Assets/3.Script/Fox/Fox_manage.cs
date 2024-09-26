@@ -6,47 +6,46 @@ public class Fox_manage : MonoBehaviour
 {
     public GameObject Spacebar;
     private Fox_Move fox_Move;
+    
     //public int maxHealth;
     //public int curHealth;
 
     private Animator ani;
-    private Collider ladder_Pcol;
-    private Vector3 LadderPosition_Bottom;
-    private Vector3 LadderPosition_Up;
     private Rigidbody rb;
     
 
     //private bool isHurt = false;
     public bool isInteraction;
-    public bool isClimbing = false;
-    //사다리 위/아래 구분
+    
+    //사다리
+    private Collider ladder_Pcol;
+    private Vector3 LadderPosition_Bottom;
+    private Vector3 LadderPosition_Up;
     private bool isClimb_Up;
     public bool isClimb_Down;
+    public bool isClimbing = false;
+
+    //Box
+    private Collider box_col;
+    private Vector3 Box_center;
+    private bool isSwordBox;
+    public bool isBox;
 
     private void Awake()
     {
+        
+        Spacebar = GameObject.FindGameObjectWithTag("Spacebar");
+        fox_Move = GetComponent<Fox_Move>();
         rb = GetComponent<Rigidbody>();
         ani = GetComponent<Animator>();
-        if (ani == null)
-        {
-            Debug.LogError("Animator 컴포넌트가 할당되지 않았습니다!");
-        }
-    }
-
-    private void Start()
-    {
-        fox_Move = GetComponent<Fox_Move>();
         
     }
-
     private void Update()
     {
         //if (isHurt)
         //{
         //    isHurt = false;
         //}
-        
-
         if (ladder_Pcol != null)
         {
             //사다리 올라가기
@@ -56,9 +55,9 @@ public class Fox_manage : MonoBehaviour
                 {
 
                     FoxToLadder_Up();
-                isClimbing = true;
-                Spacebar.SetActive(false);
-                ani.SetBool("isClimb", true);
+                    isClimbing = true;
+                    Spacebar.SetActive(false);
+                    ani.SetBool("isClimb", true);
                 }
 
                 if (isClimb_Down)
@@ -69,9 +68,34 @@ public class Fox_manage : MonoBehaviour
                     ani.SetBool("isClimb", true);
 
                 }
-               
+                if (isSwordBox)
+                {
+                    Debug.Log("상자 열기 들어옴");
+                    FoxToBox();
+                    isBox = true;
+                }
+
+            }
+            else if (Input.GetKeyDown(KeyCode.Space) && isSwordBox)
+            {
+                Debug.Log("상자 열기 들어옴");
+                FoxToBox();
+                isBox = true;
             }
         }
+        //else if (box_col != null)
+        //{
+        //    Debug.Log("여기까진 들어옴");
+        //    //상자 열기
+        //    if (Input.GetKeyDown(KeyCode.Space) && isInteraction && Spacebar.activeSelf && isSwordBox)
+        //    {
+        //        Debug.Log("상자 열기 들어옴");
+        //        FoxToBox();
+        //        isBox = true;
+        //    }
+        //    else
+        //        Debug.Log("상자 안눌림");
+        //}
 
         //사다리 끝내기
         if (isClimbing)
@@ -79,94 +103,6 @@ public class Fox_manage : MonoBehaviour
             CheckGround();
         }
 
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Interaction"))
-        {
-            if (!isClimbing)
-            {
-
-                Animator space_ani = Spacebar.GetComponent<Animator>();
-                ladder_Pcol = other;
-                Spacebar.transform.position = Camera.main.WorldToScreenPoint(other.transform.position + Vector3.up * 2f);
-                Spacebar.SetActive(true);
-                space_ani.SetTrigger("spacebar_Start");
-                isInteraction = true;
-                //사다리_UP
-                if (other.CompareTag("Ladder"))
-                {
-                    Collider ladder_Pcol = other.transform.parent.GetComponent<BoxCollider>();
-                    if (ladder_Pcol != null)
-                    {
-                        LadderPosition_Bottom = ladder_Pcol.bounds.center;
-                        isClimb_Up = true;
-                    }
-                }
-                if (other.CompareTag("Ladder_Down"))
-                {
-                    Collider ladder_Pcol = other.GetComponent<BoxCollider>();
-                    if (ladder_Pcol != null)
-                    {
-                        LadderPosition_Up = ladder_Pcol.bounds.center;
-                    }
-                    isClimb_Down = true;
-                }
-            }
-            else
-            {
-                //사다리_Down
-                if (other.CompareTag("Ladder_Finish"))
-                {
-                    Debug.Log("d");
-                    if (isClimbing && rb.isKinematic)
-                    {
-                        ani.SetTrigger("isClimb_Off");
-                        ani.SetBool("isClimb", false);
-                        rb.isKinematic = false;
-                        isClimbing = false;
-                        isClimb_Up = false;
-                    }
-                    
-                }
-                    
-            }
-            
-
-
-        }
-
-
-        //if (other.CompareTag("Monster_Attack"))
-        //{
-        //    MonsterController monster_Attack = other.transform.parent.GetComponent<MonsterController>();
-        //    curHealth -= monster_Attack.skulData.damage;
-        //    Debug.Log("현재체력 : " + curHealth);
-        //    ani.SetTrigger("hurt");
-        //    isHurt = true;
-        //    Fox_Move fox_Move = GetComponent<Fox_Move>();
-        //    fox_Move.Hurt_Bool();
-        //    if (curHealth == 0)
-        //    {
-        //        ani.SetTrigger("die");
-        //    }
-        //}
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Interaction"))
-        {
-            if (isInteraction)
-            { 
-            
-            Spacebar.SetActive(false);
-            isInteraction = false;
-            }
-            
-        }
     }
 
     //사다리 오르기
@@ -187,7 +123,17 @@ public class Fox_manage : MonoBehaviour
         }
         
     }
-
+    private void FoxToBox()
+    {
+        Vector3 targetPosition = new Vector3(Box_center.x, transform.position.y, Box_center.z);
+        Vector3 targetRotation = -ladder_Pcol.transform.forward;
+        Debug.Log(targetPosition);
+        if (rb != null)
+        {
+            transform.position = targetPosition;
+            transform.rotation = Quaternion.LookRotation(targetRotation);
+        }
+    }
     //사다리 내려가기
     private void FoxToLadder_Down()
     {
@@ -236,5 +182,95 @@ public class Fox_manage : MonoBehaviour
     public void Ladder_DownStart()
     {
         rb.isKinematic = true;
+    }
+
+    //스폰관련
+    public void SetSpacebar(GameObject spacebar)
+    {
+        this.Spacebar = spacebar;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //상호작용
+        if (other.gameObject.layer == LayerMask.NameToLayer("Interaction"))
+        {
+            if (!isClimbing)
+            {
+
+                Animator space_ani = Spacebar.GetComponent<Animator>();
+                ladder_Pcol = other;
+                //box_col = other;
+                Spacebar.transform.position = Camera.main.WorldToScreenPoint(other.transform.position + Vector3.up * 2f);
+                Spacebar.SetActive(true);
+                space_ani.SetTrigger("spacebar_Start");
+                isInteraction = true;
+                //사다리_UP
+                if (other.CompareTag("Ladder"))
+                {
+                    Collider ladder_Pcol = other.transform.parent.GetComponent<BoxCollider>();
+                    if (ladder_Pcol != null)
+                    {
+                        LadderPosition_Bottom = ladder_Pcol.bounds.center;
+                        isClimb_Up = true;
+                    }
+                }
+                else if (other.CompareTag("Ladder_Down"))
+                {
+                    Collider ladder_Pcol = other.GetComponent<BoxCollider>();
+                    if (ladder_Pcol != null)
+                    {
+                        LadderPosition_Up = ladder_Pcol.bounds.center;
+                    }
+                    isClimb_Down = true;
+                }
+                else if (other.CompareTag("SwordBox"))
+                {
+                    Debug.Log("SwordBox 충돌 됐나?");
+                    Collider ladder_Pcol = other.transform.GetComponent<BoxCollider>();
+                    if (ladder_Pcol != null)
+                    {
+                        Box_center = ladder_Pcol.bounds.center;
+                        
+                    }
+                    isSwordBox = true;
+                    Debug.Log(isSwordBox);
+                }
+            }
+            else
+            {
+                //사다리_Down
+                if (other.CompareTag("Ladder_Finish"))
+                {
+                    if (isClimbing && rb.isKinematic)
+                    {
+                        ani.SetTrigger("isClimb_Off");
+                        ani.SetBool("isClimb", false);
+                        rb.isKinematic = false;
+                        isClimbing = false;
+                        isClimb_Up = false;
+                    }
+
+                }
+
+            }
+
+            
+        }
+       
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Interaction"))
+        {
+            if (isInteraction)
+            {
+
+                Spacebar.SetActive(false);
+                isInteraction = false;
+            }
+
+        }
     }
 }
