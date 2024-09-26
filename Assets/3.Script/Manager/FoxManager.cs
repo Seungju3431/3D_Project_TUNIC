@@ -127,7 +127,7 @@ public class FoxManager : MonoBehaviour
         }
         else if (scene.name == "World 1" && fromSwordCave)
         {
-            gameObject.transform.position = new Vector3(-10.8f, 12.0f, -128.5f);
+            gameObject.transform.position = new Vector3(-10.85f, 11.83f, -128.43f);
             Debug.Log("World 1");
             fromSwordCave = false;
             fox_Move.canMoveOutNav = true;

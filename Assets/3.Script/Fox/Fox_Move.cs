@@ -38,7 +38,7 @@ public class Fox_Move : MonoBehaviour
         isInput = true;
         navMove = GetComponent<Nav_Move>();
         fox_Manage = GetComponent<Fox_manage>();
-
+        animator.applyRootMotion = true;
     }
 
     //private void FixedUpdate()

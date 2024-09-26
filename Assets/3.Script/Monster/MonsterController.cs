@@ -8,7 +8,7 @@ public class MonsterController : MonoBehaviour
     public SkulSo skulData;
 
     [SerializeField] public GameObject fx_Hit;
-    [SerializeField] public Transform target;
+    private Transform target;
     
     private bool isHurting;
     private bool isAttacking;
@@ -25,9 +25,17 @@ public class MonsterController : MonoBehaviour
 
     private void Awake()
     {
+        GameObject fox = GameObject.FindGameObjectWithTag("Fox");
+        if (fox != null)
+        {
+            target = fox.transform;
+        }
+        else
+        {
+            Debug.Log("fox¸øÃ£À½");
+        }
         ani = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
-
     }
     private void Start()
     {
