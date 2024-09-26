@@ -7,7 +7,7 @@ public class MonsterController : MonoBehaviour
 {
     public SkulSo skulData;
 
-    [SerializeField] public GameObject fx_Hit;
+    public GameObject fx_Hit;
     private Transform target;
     
     private bool isHurting;
@@ -242,7 +242,23 @@ public class MonsterController : MonoBehaviour
             }
         }
     }
-
+    public void Initialize()
+    {
+        GameObject fox = GameObject.FindGameObjectWithTag("Fox");
+        if (fox != null)
+        {
+            target = fox.transform;
+        }
+        else
+        {
+            Debug.Log("fox못찾음");
+        }
+        ani = GetComponent<Animator>();
+        nav = GetComponent<NavMeshAgent>();
+        isHurting = false;
+        isAttacking = false;
+        controll_co_F = StartCoroutine(Find_co());
+    }
     ////피격
     //private void OnCollisionEnter(Collision collision)
     //{

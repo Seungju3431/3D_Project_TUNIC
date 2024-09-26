@@ -218,7 +218,7 @@ public class Fox_Move : MonoBehaviour
             animator.SetFloat("climbSpeed", moveVertical * 2f);
             transform.position += moveVertical * transform.up *Time.deltaTime * 4f;
         }
-        
+
     }
 
     private void OnAnimatorMove()
@@ -236,6 +236,16 @@ public class Fox_Move : MonoBehaviour
             rb.position = newPosition;
             rb.rotation = newRotation;
         }
+    }
+
+    public void Initialize()
+    {
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+        isInput = true;
+        navMove = GetComponent<Nav_Move>();
+        fox_Manage = GetComponent<Fox_manage>();
+        animator.applyRootMotion = true;
     }
 
     private void LateUpdate()
