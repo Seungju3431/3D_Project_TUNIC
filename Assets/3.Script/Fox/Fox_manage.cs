@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Fox_manage : MonoBehaviour
 {
@@ -26,10 +27,12 @@ public class Fox_manage : MonoBehaviour
     public bool isClimbing = false;
 
     //Box
-    private Collider box_col;
     private Vector3 Box_center;
+    private string boxID;
+    public string itemName;
     private bool isSwordBox;
     public bool isBox;
+    
 
     private void Awake()
     {
@@ -59,8 +62,7 @@ public class Fox_manage : MonoBehaviour
                     Spacebar.SetActive(false);
                     ani.SetBool("isClimb", true);
                 }
-
-                if (isClimb_Down)
+                else if (isClimb_Down)
                 {
                     FoxToLadder_Down();
                     ani.SetTrigger("isClimb_On");
@@ -68,20 +70,35 @@ public class Fox_manage : MonoBehaviour
                     ani.SetBool("isClimb", true);
 
                 }
-                if (isSwordBox)
+                else if (isSwordBox)
                 {
-                    Debug.Log("상자 열기 들어옴");
-                    FoxToBox();
-                    isBox = true;
+                    string boxID = GetCurrentBoxID();
+                    if (!StateManager.instance.GetBoxState(boxID))
+                    {
+                        Debug.Log("상자 열기 들어옴");
+                        FoxToBox();
+                        isBox = true;
+
+                        //상자 상태 저장
+                        StateManager.instance.UpdateBoxState(boxID, true);
+                        
+                    }
+                    else
+                    {
+                        Debug.Log("요기, 상자 이미 열려있음");
+                    }
+                   
+                   
                 }
 
             }
-            else if (Input.GetKeyDown(KeyCode.Space) && isSwordBox)
-            {
-                Debug.Log("상자 열기 들어옴");
-                FoxToBox();
-                isBox = true;
-            }
+            //else if (Input.GetKeyDown(KeyCode.Space) && isSwordBox
+            //    && !StateManager.instance.GetBoxState(GetCurrentBoxID()))
+            //{
+            //    Debug.Log("상자 열기 들어옴");
+            //    FoxToBox();
+            //    isBox = true;
+            //}
         }
         //else if (box_col != null)
         //{
@@ -123,17 +140,7 @@ public class Fox_manage : MonoBehaviour
         }
         
     }
-    private void FoxToBox()
-    {
-        Vector3 targetPosition = new Vector3(Box_center.x, transform.position.y, Box_center.z);
-        Vector3 targetRotation = -ladder_Pcol.transform.forward;
-        Debug.Log(targetPosition);
-        if (rb != null)
-        {
-            transform.position = targetPosition;
-            transform.rotation = Quaternion.LookRotation(targetRotation);
-        }
-    }
+   
     //사다리 내려가기
     private void FoxToLadder_Down()
     {
@@ -170,6 +177,24 @@ public class Fox_manage : MonoBehaviour
         Debug.DrawRay(ray, Vector3.down * rayDistance, Color.red);
     }
 
+    //상자
+    private void FoxToBox()
+    {
+        Vector3 targetPosition = new Vector3(Box_center.x, transform.position.y, Box_center.z);
+        Vector3 targetRotation = -ladder_Pcol.transform.forward;
+        Debug.Log(targetPosition);
+        if (rb != null)
+        {
+            transform.position = targetPosition;
+            transform.rotation = Quaternion.LookRotation(targetRotation);
+        }
+    }
+
+    // 현재 상자의 ID 가져오기
+    private string GetCurrentBoxID()
+    {
+        return SceneManager.GetActiveScene().name + "_" + ladder_Pcol.gameObject.name;
+    }
     //애니메이션 이벤트
     public void Ladder_UpFinish()
     {
@@ -226,15 +251,18 @@ public class Fox_manage : MonoBehaviour
                 }
                 else if (other.CompareTag("SwordBox"))
                 {
-                    Debug.Log("SwordBox 충돌 됐나?");
-                    Collider ladder_Pcol = other.transform.GetComponent<BoxCollider>();
-                    if (ladder_Pcol != null)
+                    if (!StateManager.instance.GetBoxState(boxID))
                     {
-                        Box_center = ladder_Pcol.bounds.center;
-                        
+                        Debug.Log("SwordBox 충돌 됐나?");
+                        Collider ladder_Pcol = other.transform.GetComponent<BoxCollider>();
+                        if (ladder_Pcol != null)
+                        {
+                            Box_center = ladder_Pcol.bounds.center;
+
+                        }
+                        isSwordBox = true;
+                        Debug.Log(isSwordBox);
                     }
-                    isSwordBox = true;
-                    Debug.Log(isSwordBox);
                 }
             }
             else

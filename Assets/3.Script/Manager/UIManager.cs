@@ -11,6 +11,10 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Slider healthBar;
     [SerializeField] private Slider staminaBar;
+    [SerializeField] private GameObject shieldImage;
+    [SerializeField] private GameObject swordImage;
+    [SerializeField] private GameObject keyImage;
+
 
     private void Awake()
     {
@@ -69,6 +73,28 @@ public class UIManager : MonoBehaviour
         {
             staminaBar.maxValue = maxStamina;
             staminaBar.value = nowStamina;
+        }
+    }
+
+    //아이템
+    public void UpdateItemUI(string itemName)
+    {
+        Debug.Log("UpdateItemUI");
+        switch (itemName)
+        {
+            case "Sword":
+                swordImage.SetActive(true);
+                break;
+            case "Shield":
+                shieldImage.SetActive(true);
+                break;
+            case "Key":
+                shieldImage.SetActive(true);
+                break;
+
+            default:
+                Debug.LogWarning("알 수 없는 아이템: " + itemName);
+                break;
         }
     }
 }
