@@ -32,7 +32,9 @@ public class Fox_manage : MonoBehaviour
     public string itemName;
     private bool isSwordBox;
     public bool isBox;
-    
+
+    //Page
+    private bool isPage;
 
     private void Awake()
     {
@@ -81,38 +83,24 @@ public class Fox_manage : MonoBehaviour
 
                         //상자 상태 저장
                         StateManager.instance.UpdateBoxState(boxID, true);
-                        
+
                     }
                     else
                     {
                         Debug.Log("요기, 상자 이미 열려있음");
                     }
-                   
-                   
+
+
+                }
+                else if (isPage)
+                { 
+                
                 }
 
             }
-            //else if (Input.GetKeyDown(KeyCode.Space) && isSwordBox
-            //    && !StateManager.instance.GetBoxState(GetCurrentBoxID()))
-            //{
-            //    Debug.Log("상자 열기 들어옴");
-            //    FoxToBox();
-            //    isBox = true;
-            //}
+         
         }
-        //else if (box_col != null)
-        //{
-        //    Debug.Log("여기까진 들어옴");
-        //    //상자 열기
-        //    if (Input.GetKeyDown(KeyCode.Space) && isInteraction && Spacebar.activeSelf && isSwordBox)
-        //    {
-        //        Debug.Log("상자 열기 들어옴");
-        //        FoxToBox();
-        //        isBox = true;
-        //    }
-        //    else
-        //        Debug.Log("상자 안눌림");
-        //}
+       
 
         //사다리 끝내기
         if (isClimbing)
@@ -225,7 +213,6 @@ public class Fox_manage : MonoBehaviour
 
                 Animator space_ani = Spacebar.GetComponent<Animator>();
                 ladder_Pcol = other;
-                //box_col = other;
                 Spacebar.transform.position = Camera.main.WorldToScreenPoint(other.transform.position + Vector3.up * 2f);
                 Spacebar.SetActive(true);
                 space_ani.SetTrigger("spacebar_Start");
@@ -263,6 +250,10 @@ public class Fox_manage : MonoBehaviour
                         isSwordBox = true;
                         Debug.Log(isSwordBox);
                     }
+                }
+                else if (other.CompareTag("Page"))
+                {
+                    isPage = true;
                 }
             }
             else

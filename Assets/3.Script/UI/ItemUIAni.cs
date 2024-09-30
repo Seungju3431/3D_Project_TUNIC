@@ -14,4 +14,9 @@ public class ItemUIAni : MonoBehaviour
         ani = GetComponent<Animator>();
         raw = GetComponent<RawImage>();
     }
+
+    public void SwordUI_Finish()
+    {
+        ani.SetBool("show", false);
+    }
 }

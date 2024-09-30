@@ -63,8 +63,6 @@ public class Box_Controller : MonoBehaviour
     //애니메이션 이벤트
     public void UIAni_T()
     {
-        
-  
         itemUI.SetBool("show", true);
     }
 }

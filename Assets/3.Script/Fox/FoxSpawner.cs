@@ -33,7 +33,7 @@ public class FoxSpawner : MonoBehaviour
             
             virtualCamera.SetTarGetFox(obj);
         }
-        OnFoxSpawned();
+       // OnFoxSpawned();
     }
 
     private void OnFoxSpawned()
