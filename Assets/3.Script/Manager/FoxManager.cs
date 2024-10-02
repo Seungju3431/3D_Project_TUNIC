@@ -17,6 +17,7 @@ public class FoxManager : MonoBehaviour
     
     private bool isHurt = false;
     private bool fromSwordCave; //SwordCave씬 -> World
+    private bool fromForestMain; //World -> ForestMain
 
     //스테미너 관련
     public float maxStamina = 40f; //스테미너 최대
@@ -135,7 +136,14 @@ public class FoxManager : MonoBehaviour
             fox_Move.canMoveOutNav = true;
             //SceneManager.sceneLoaded -= OnSceneLoaded;
         }
-
+        else if (scene.name == "Forest Main" && !fromForestMain)
+        {
+            gameObject.transform.position = new Vector3(76.38f, 7.98f, 80.68f);
+            fox_Move.canMoveOutNav = true;
+            fromForestMain = true;
+            
+        }
+    
         //구독 해지
 
     }
@@ -150,19 +158,19 @@ public class FoxManager : MonoBehaviour
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
             OnHealthChanged?.Invoke(currentHealth, maxHealth);
             Debug.Log("현재체력 : " + currentHealth);
-           
+
             ani.SetTrigger("hurt");
             isHurt = true;
             Fox_Move fox_Move = GetComponent<Fox_Move>();
             fox_Move.Hurt_Bool();
-            
+
             if (currentHealth <= 0)
             {
                 Die();
             }
         }
 
-        if (other.CompareTag("CheckPoint"))
+        else if (other.CompareTag("CheckPoint"))
         {
             Vector3 savePosition = other.transform.position;
 
@@ -185,18 +193,49 @@ public class FoxManager : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("SwordCave"))
+        else if (other.CompareTag("SwordCave"))
         {
             SceneManager.LoadScene("SwordCave");
             fromSwordCave = false;
         }
 
-        if (other.CompareTag("SwordCave_World"))
+        else if (other.CompareTag("SwordCave_World"))
         {
             SceneManager.LoadScene("World 1");
             fox_Move.canMoveOutNav = false;
-            
+
+        }
+        else if (other.CompareTag("KeyDoorCave_In"))
+        {
+            fox_Move.canMoveOutNav = false;
+            gameObject.transform.position = new Vector3(48.94f, 20f, -130.27f);
+
+        }
+        else if (other.CompareTag("KeyDoorCave_Out"))
+        {
+            fox_Move.canMoveOutNav = false;
+            gameObject.transform.position = new Vector3(20.38f, 20f, -122.26f);
+        }
+        else if (other.CompareTag("Forest Main"))
+        {
+            SceneManager.LoadScene("Forest Main");
+            fox_Move.canMoveOutNav = false;
+            fromForestMain = false;
+            //gameObject.transform.position = new Vector3(444.64f, 38f, 105.13f);
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("KeyDoorCave_In"))
+        {
+            fox_Move.canMoveOutNav = true;
+        }
+        else if (other.CompareTag("KeyDoorCave_Out"))
+        {
+            fox_Move.canMoveOutNav = true;
         }
     }
-    
+
 }

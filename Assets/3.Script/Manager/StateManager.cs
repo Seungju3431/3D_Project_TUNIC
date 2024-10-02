@@ -77,6 +77,7 @@ public class StateManager : MonoBehaviour
 
     public void UpdateSwitchStoneState(string doorID, bool isOpen_Door)
     {
+        
         StateData door = doorDataList.doorDataList.Find(d => d.doorID == doorID);
         if (door == null)
         {
