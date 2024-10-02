@@ -36,6 +36,13 @@ public class Fox_manage : MonoBehaviour
     //Page
     private bool isPage;
 
+    //SwitchStone
+    private Vector3 Door_center;
+    private bool isSwitch;
+    public bool isSwitchStoneOpen;
+    private string doorID;
+
+
     private void Awake()
     {
         
@@ -92,9 +99,22 @@ public class Fox_manage : MonoBehaviour
 
 
                 }
+                else if (isSwitch)
+                {
+                    string doorID = GetCurrentDoorID();
+                    if (!StateManager.instance.GetDoorState(doorID))
+                    {
+                        ani.SetTrigger("doorOpen");
+                        FoxToDoor();
+                        isSwitchStoneOpen = true;
+                        isSwitch = false;
+                        StateManager.instance.UpdateSwitchStoneState(doorID, true);
+                    }
+                    
+                }
                 else if (isPage)
-                { 
-                
+                {
+
                 }
 
             }
@@ -178,11 +198,30 @@ public class Fox_manage : MonoBehaviour
         }
     }
 
+    //Door
+    private void FoxToDoor()
+    {
+        Vector3 targetPosition = new Vector3(Door_center.x, transform.position.y, Door_center.z);
+        Vector3 targetRotation = ladder_Pcol.transform.right;
+        Debug.Log(targetPosition);
+        if (rb != null)
+        {
+            transform.position = targetPosition;
+            transform.rotation = Quaternion.LookRotation(targetRotation);
+        }
+    }
+
     // 현재 상자의 ID 가져오기
     private string GetCurrentBoxID()
     {
         return SceneManager.GetActiveScene().name + "_" + ladder_Pcol.gameObject.name;
     }
+    // Door ID 가져오기
+    private string GetCurrentDoorID()
+    { 
+    return SceneManager.GetActiveScene().name + "_" + ladder_Pcol.gameObject.name;
+    }
+    
     //애니메이션 이벤트
     public void Ladder_UpFinish()
     {
@@ -255,6 +294,20 @@ public class Fox_manage : MonoBehaviour
                 {
                     isPage = true;
                 }
+                else if (other.CompareTag("SwitchStone"))
+                {
+                    Debug.Log("SwitchStone");
+                    if (!StateManager.instance.GetDoorState(doorID))
+                    {
+                        Collider ladder_Pcol = other.transform.GetComponent<BoxCollider>();
+                        if (ladder_Pcol != null)
+                        {
+                            Door_center = ladder_Pcol.bounds.center;
+                        }
+                        isSwitch = true;
+                        Debug.Log("스톤 트리거 완");
+                    }
+                }
             }
             else
             {
@@ -289,7 +342,10 @@ public class Fox_manage : MonoBehaviour
                 Spacebar.SetActive(false);
                 isInteraction = false;
             }
-
+            else if (other.CompareTag("Ladder_Down"))
+            {
+                isClimb_Down = false;
+            }
         }
     }
 }

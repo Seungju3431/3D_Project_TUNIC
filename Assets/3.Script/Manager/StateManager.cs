@@ -8,7 +8,9 @@ public class StateManager : MonoBehaviour
 {
     public static StateManager instance;
     private string filePath;
+    private string filePath_door;
     public BoxDataList boxDataList;
+    public DoorDataList doorDataList;
 
     private void Awake()
     {
@@ -22,6 +24,7 @@ public class StateManager : MonoBehaviour
             Destroy(gameObject);
         }
         filePath = Application.persistentDataPath + "/boxData.json";
+        filePath_door = Application.persistentDataPath + "/doorData.json";
         //LoadBoxData();
     }
     public void SaveBoxData()
@@ -30,12 +33,19 @@ public class StateManager : MonoBehaviour
         File.WriteAllText(filePath, jsonDta);
         Debug.Log("Box 세이브");
     }
+    public void SaveDoorData()
+    {
+        string jsonDta = JsonMapper.ToJson(doorDataList);
+        File.WriteAllText(filePath_door, jsonDta);
+        Debug.Log("Door 세이브");
+    }
     public void LoadBoxData()
     {
         if (File.Exists(filePath))
         {
             string jsonData = File.ReadAllText(filePath);
             boxDataList = JsonMapper.ToObject<BoxDataList>(jsonData);
+            doorDataList = JsonMapper.ToObject<DoorDataList>(jsonData);
             Debug.Log("Box데이터 로드");
         }
         else
@@ -63,5 +73,26 @@ public class StateManager : MonoBehaviour
     {
         StateData box = boxDataList.boxDataList.Find(b => b.boxID == boxID);
         return box != null && box.isOpen_Box;
+    }
+
+    public void UpdateSwitchStoneState(string doorID, bool isOpen_Door)
+    {
+        StateData door = doorDataList.doorDataList.Find(d => d.doorID == doorID);
+        if (door == null)
+        {
+            door = new StateData { doorID = doorID, isOpen_Door = isOpen_Door };
+            doorDataList.doorDataList.Add(door);
+        }
+        else
+        {
+            door.isOpen_Door = isOpen_Door;
+        }
+        SaveDoorData();
+    }
+
+    public bool GetDoorState(string doorID)
+    {
+        StateData door = doorDataList.doorDataList.Find(d => d.doorID == doorID);
+        return door != null && door.isOpen_Door;
     }
 }
