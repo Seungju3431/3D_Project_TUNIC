@@ -13,6 +13,7 @@ public class SwitchStoneController : MonoBehaviour
     private void Awake()
     {
         ani = GetComponent<Animator>();
+        //door = GetComponent<Animator>();
         GameObject fox_obj = GameObject.FindGameObjectWithTag("Fox");
         if (fox_obj != null)
         {
@@ -52,11 +53,11 @@ public class SwitchStoneController : MonoBehaviour
 
     public void OpenDoor()
     {
-        door.SetTrigger("DoorOpen");
+        door.SetTrigger("doorOpen");
     }
 
     public void OpendDoor()
     {
-        door.SetTrigger("DoorResult");
+        door.SetTrigger("doorResult");
     }
 }

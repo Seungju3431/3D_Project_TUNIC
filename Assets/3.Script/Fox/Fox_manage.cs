@@ -262,6 +262,7 @@ public class Fox_manage : MonoBehaviour
                     Collider ladder_Pcol = other.transform.parent.GetComponent<BoxCollider>();
                     if (ladder_Pcol != null)
                     {
+                        Debug.Log(isClimb_Up);
                         LadderPosition_Bottom = ladder_Pcol.bounds.center;
                         isClimb_Up = true;
                     }
@@ -316,11 +317,13 @@ public class Fox_manage : MonoBehaviour
                 {
                     if (isClimbing && rb.isKinematic)
                     {
+                        Debug.Log("여기");
                         ani.SetTrigger("isClimb_Off");
                         ani.SetBool("isClimb", false);
                         rb.isKinematic = false;
                         isClimbing = false;
                         isClimb_Up = false;
+                        isClimb_Down = false;
                     }
 
                 }
@@ -338,14 +341,32 @@ public class Fox_manage : MonoBehaviour
         {
             if (isInteraction)
             {
-
                 Spacebar.SetActive(false);
                 isInteraction = false;
             }
-            else if (other.CompareTag("Ladder_Down"))
-            {
-                isClimb_Down = false;
-            }
+           
+            //else if (other.CompareTag("Ladder_Down"))
+            //{
+            //    isClimb_Down = false;
+            //}
         }
+        //if (other.CompareTag("Ladder"))
+        //{
+        //    isClimb_Up = false;
+        //    Debug.Log(isClimb_Up);
+        //}
+        //else if (other.CompareTag("Ladder_Finish"))
+        //{
+        //    Debug.Log("여기요");
+        //}
+        //else if (other.CompareTag("Ladder_Down"))
+        //{
+        //    isClimb_Down = false;
+        //}
+        //else if (other.CompareTag("SwitchStone"))
+        //{
+        //    Debug.Log("스위치 off");
+        //    isSwitch = false;
+        //}
     }
 }
