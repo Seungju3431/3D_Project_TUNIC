@@ -350,23 +350,23 @@ public class Fox_manage : MonoBehaviour
             //    isClimb_Down = false;
             //}
         }
-        //if (other.CompareTag("Ladder"))
-        //{
-        //    isClimb_Up = false;
-        //    Debug.Log(isClimb_Up);
-        //}
-        //else if (other.CompareTag("Ladder_Finish"))
-        //{
-        //    Debug.Log("여기요");
-        //}
-        //else if (other.CompareTag("Ladder_Down"))
-        //{
-        //    isClimb_Down = false;
-        //}
-        //else if (other.CompareTag("SwitchStone"))
-        //{
-        //    Debug.Log("스위치 off");
-        //    isSwitch = false;
-        //}
+        if (other.CompareTag("Ladder"))
+        {
+            isClimb_Up = false;
+            Debug.Log(isClimb_Up);
+        }
+        else if (other.CompareTag("Ladder_Finish"))
+        {
+            Debug.Log("여기요");
+        }
+        else if (other.CompareTag("Ladder_Down"))
+        {
+            isClimb_Down = false;
+        }
+        else if (other.CompareTag("SwitchStone"))
+        {
+            Debug.Log("스위치 off");
+            isSwitch = false;
+        }
     }
 }
