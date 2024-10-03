@@ -9,11 +9,16 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
 
+    [SerializeField] public Image potionIcon;
+    [SerializeField] Sprite fullPotionSprite;
+    [SerializeField] Sprite emptyPotionSprite;
     [SerializeField] private Slider healthBar;
     [SerializeField] private Slider staminaBar;
     [SerializeField] private GameObject shieldImage;
     [SerializeField] private GameObject swordImage;
     [SerializeField] private GameObject keyImage;
+
+
 
 
     private void Awake()
@@ -46,7 +51,7 @@ public class UIManager : MonoBehaviour
 
         }
     }
-    
+
     private void OnDestroy()
     {
         if (FoxManager.Instance != null)
@@ -65,7 +70,14 @@ public class UIManager : MonoBehaviour
             healthBar.value = currentHealth;
         }
     }
-
+    //포션
+    public void UpdatePotionUI(bool hasPotion)
+    {
+        if (potionIcon != null)
+        {
+            potionIcon.sprite = hasPotion ? fullPotionSprite : emptyPotionSprite;
+        }
+    }
     //스테미나
     public void UpdateStaminaUI(float nowStamina, float maxStamina)
     {
@@ -97,4 +109,6 @@ public class UIManager : MonoBehaviour
                 break;
         }
     }
+
+    
 }

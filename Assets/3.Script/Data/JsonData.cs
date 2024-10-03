@@ -34,24 +34,28 @@ public class JsonData
     }
 }
 
-[System.Serializable]
-public class StateData
-{
-    public string boxID; //상자 고유 ID(씬 이름 + 상자 이름)
-    public bool isOpen_Box; //상자 열렸는지 여부
 
-    public string doorID;
-    public bool isOpen_Door; //문 열렸는지 여부
+[System.Serializable]
+public class BoxStateData
+{
+    public string boxID; // 상자 고유 ID(씬 이름 + 상자 이름)
+    public bool isOpen_Box; // 상자가 열렸는지 여부
+}
+[System.Serializable]
+public class DoorStateData
+{
+    public string doorID; // 문 고유 ID(씬 이름 + 문 이름)
+    public bool isOpen_Door; // 문이 열렸는지 여부
 }
 
 [System.Serializable]
 public class BoxDataList
 {
-    public List<StateData> boxDataList = new List<StateData>();
+    public List<BoxStateData> boxDataList = new List<BoxStateData>();
 }
 
 [System.Serializable]
 public class DoorDataList
 {
-    public List<StateData> doorDataList = new List<StateData>();
+    public List<DoorStateData> doorDataList = new List<DoorStateData>();
 }

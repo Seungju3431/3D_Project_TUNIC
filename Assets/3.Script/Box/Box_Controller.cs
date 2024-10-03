@@ -17,11 +17,11 @@ public class Box_Controller : MonoBehaviour
         
         //itemUI = GetComponent<Animator>();
         ani = GetComponent<Animator>();
-        //GameObject fox_obj = GameObject.FindGameObjectWithTag("Fox");
-        //if (fox_obj != null)
-        //{
-        //    fox_manage = fox_obj.GetComponent<Fox_manage>();
-        //}
+        GameObject fox_obj = GameObject.FindGameObjectWithTag("Fox");
+        if (fox_obj != null)
+        {
+            fox_manage = fox_obj.GetComponent<Fox_manage>();
+        }
         Invoke("BoxStart_In", 0.5f);
         boxID
         = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name

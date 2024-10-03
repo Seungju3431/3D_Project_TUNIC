@@ -16,10 +16,10 @@ public class Fox_Move : MonoBehaviour
     [SerializeField] public float rotationSpeed;
     [SerializeField] public GameObject Sword;
     [SerializeField] public GameObject HPPotion;
+    [SerializeField] public GameObject Shield;  
     [SerializeField] public ParticleSystem Particle_Potion;
     [SerializeField] public ParticleSystem Particle_DodgeLess;
 
-    
     private float lastActionTime = 0f;//공격시간 저장
 
     public bool canMoveOutNav;
@@ -29,6 +29,8 @@ public class Fox_Move : MonoBehaviour
     private bool isSwing = false;
     public bool isShield;
     public bool isInput;
+    //public bool hasSword = false;
+    //public bool hasShield = false;
     //private bool canRecoverStamina = true;
 
 
@@ -40,6 +42,8 @@ public class Fox_Move : MonoBehaviour
         navMove = GetComponent<Nav_Move>();
         fox_Manage = GetComponent<Fox_manage>();
         animator.applyRootMotion = true;
+        Sword.SetActive(false);
+        Shield.SetActive(false);
     }
 
     //private void FixedUpdate()
@@ -138,9 +142,17 @@ public class Fox_Move : MonoBehaviour
             //공격
             if (isInput && Input.GetKeyDown(KeyCode.J) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
             {
+                if (InventoryManager.instance.hasSword)
+                { 
+                
                 isSwing = true;
                 animator.SetTrigger("swing_sword");
                 lastActionTime = Time.time;
+                }
+            }
+            else
+            {
+                //Debug.Log("인벤토리에 검 없음");
             }
 
             if (isDodgeing || isSwing || isDodgeLessing) return;
@@ -209,21 +221,34 @@ public class Fox_Move : MonoBehaviour
             //HP 포션
             if (Input.GetKeyDown(KeyCode.P) && !fox_Manage.isInteraction && !fox_Manage.isClimbing)
             {
-                //animator.SetLayerWeight(1, 0.78f);
+                if (InventoryManager.instance.hasPotion)
+                { 
                 animator.SetBool("isPotion", true);
+                FoxManager.Instance.Heal(4);
+                }
 
             }
 
             //방패
             if (Input.GetKey(KeyCode.K))
             {
-                animator.SetBool("isShield", true);
-                isShield = true;
+                if (InventoryManager.instance.hasShield)
+                {
+
+                    animator.SetBool("isShield", true);
+                    isShield = true;
+                }
+                else
+                {
+                    //Debug.Log("방패 없음");
+                }
             }
             else
             {
-                animator.SetBool("isShield", false);
-                isShield = false;
+                
+                    animator.SetBool("isShield", false);
+                    isShield = false;
+                
             }
         }
         else
@@ -346,5 +371,14 @@ public class Fox_Move : MonoBehaviour
         }
     }
 
-  
+    //아이템 획득 시
+    public void ActiveSword()
+    {
+        Sword.SetActive(true);
+    }
+    public void ActiveShield()
+    {
+        Shield.SetActive(true);
+    }
+
 }

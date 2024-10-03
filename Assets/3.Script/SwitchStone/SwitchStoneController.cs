@@ -13,12 +13,11 @@ public class SwitchStoneController : MonoBehaviour
     private void Awake()
     {
         ani = GetComponent<Animator>();
-        //door = GetComponent<Animator>();
-        //GameObject fox_obj = GameObject.FindGameObjectWithTag("Fox");
-        //if (fox_obj != null)
-        //{
-        //    fox_manage = fox_obj.GetComponent<Fox_manage>();
-        //}
+        GameObject fox_obj = GameObject.FindGameObjectWithTag("Fox");
+        if (fox_obj != null)
+        {
+            fox_manage = fox_obj.GetComponent<Fox_manage>();
+        }
         Invoke("SwitchStart_In", 0.5f);
         doorID
             = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name

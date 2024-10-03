@@ -56,10 +56,10 @@ public class StateManager : MonoBehaviour
 
     public void UpdateBoxState(string boxID, bool isOpen_Box)
     {
-        StateData box = boxDataList.boxDataList.Find(b => b.boxID == boxID);
+        BoxStateData box = boxDataList.boxDataList.Find(b => b.boxID == boxID);
         if (box == null)
         {
-            box = new StateData { boxID = boxID, isOpen_Box = isOpen_Box };
+            box = new BoxStateData { boxID = boxID, isOpen_Box = isOpen_Box };
             boxDataList.boxDataList.Add(box);
         }
         else
@@ -71,17 +71,17 @@ public class StateManager : MonoBehaviour
 
     public bool GetBoxState(string boxID)
     {
-        StateData box = boxDataList.boxDataList.Find(b => b.boxID == boxID);
+        BoxStateData box = boxDataList.boxDataList.Find(b => b.boxID == boxID);
         return box != null && box.isOpen_Box;
     }
 
     public void UpdateSwitchStoneState(string doorID, bool isOpen_Door)
     {
-        
-        StateData door = doorDataList.doorDataList.Find(d => d.doorID == doorID);
+
+        DoorStateData door = doorDataList.doorDataList.Find(d => d.doorID == doorID);
         if (door == null)
         {
-            door = new StateData { doorID = doorID, isOpen_Door = isOpen_Door };
+            door = new DoorStateData { doorID = doorID, isOpen_Door = isOpen_Door };
             doorDataList.doorDataList.Add(door);
         }
         else
@@ -93,7 +93,7 @@ public class StateManager : MonoBehaviour
 
     public bool GetDoorState(string doorID)
     {
-        StateData door = doorDataList.doorDataList.Find(d => d.doorID == doorID);
+        DoorStateData door = doorDataList.doorDataList.Find(d => d.doorID == doorID);
         return door != null && door.isOpen_Door;
     }
 }

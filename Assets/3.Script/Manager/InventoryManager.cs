@@ -10,6 +10,10 @@ public class InventoryManager : MonoBehaviour
     public List<string> inventoryItems;
     private string filePath;
 
+    public bool hasSword = false;
+    public bool hasShield = false;
+    public bool hasPotion = false;
+
     private void Awake()
     {
         if (instance == null)
@@ -34,6 +38,12 @@ public class InventoryManager : MonoBehaviour
             JsonData jsonData = JsonMapper.ToObject<JsonData>(jsonDataStr);
             inventoryItems = jsonData.inventoryItem;
             Debug.Log("인벤토리 데이터 로드 완료");
+
+            hasSword = inventoryItems.Contains("Sword");
+            hasShield = inventoryItems.Contains("Shield");
+            hasPotion = inventoryItems.Contains("Potion");
+
+            
         }
         else
         {
@@ -55,10 +65,49 @@ public class InventoryManager : MonoBehaviour
         if (!inventoryItems.Contains(itemName))
         {
             inventoryItems.Add(itemName);
+
+            if (itemName == "Sword")
+            {
+                hasSword = true;
+            }
+            if (itemName == "Shield")
+            {
+                hasShield = true;
+            }
+            if (itemName == "Potion")
+            {
+                hasPotion = true;
+                UIManager.Instance.UpdatePotionUI(hasPotion);
+            }
+
             SaveInventory();
             Debug.Log($"아이템 {itemName}을 인벤토리에 추가");
 
             UIManager.Instance.UpdateItemUI(itemName);
+
+            Fox_Move foxMove = FindObjectOfType<Fox_Move>();
+            if (foxMove != null)
+            {
+                if (itemName == "Sword")
+                {
+                    foxMove.ActiveSword();
+                }
+                else if (itemName == "Shield")
+                {
+                    foxMove.ActiveShield();
+                }
+            }
         }
+
+        //if (itemName == "Sword")
+        //{
+        //    Fox_Move foxMove = FindObjectOfType<Fox_Move>();
+        //    if (foxMove != null)
+        //    {
+        //        foxMove.hasSword = true;
+        //        Debug.Log("공격 가능");
+        //    }
+        //}
     }
+        
 }
