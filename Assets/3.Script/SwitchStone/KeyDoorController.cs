@@ -17,7 +17,7 @@ public class KeyDoorController : MonoBehaviour
         //{
         //    fox_manage = fox_obj.GetComponent<Fox_manage>();
         //}
-        Invoke("KeyStart_In", 3f);
+        Invoke("KeyStart_In", 0.5f);
         doorID
             = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
         + "_" + gameObject.name;

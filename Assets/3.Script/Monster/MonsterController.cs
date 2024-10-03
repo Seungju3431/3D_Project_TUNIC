@@ -7,7 +7,7 @@ public class MonsterController : MonoBehaviour
 {
     public SkulSo skulData;
 
-    public GameObject fx_Hit;
+    public GameObject fx_Hit = null;
     private Transform target;
     
     private bool isHurting;
@@ -259,6 +259,8 @@ public class MonsterController : MonoBehaviour
         isAttacking = false;
         controll_co_F = StartCoroutine(Find_co());
     }
+
+    
     ////ÇÇ°Ý
     //private void OnCollisionEnter(Collision collision)
     //{

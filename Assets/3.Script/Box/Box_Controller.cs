@@ -17,11 +17,12 @@ public class Box_Controller : MonoBehaviour
         
         //itemUI = GetComponent<Animator>();
         ani = GetComponent<Animator>();
-        GameObject fox_obj = GameObject.FindGameObjectWithTag("Fox");
-        if (fox_obj != null)
-        {
-            fox_manage = fox_obj.GetComponent<Fox_manage>();
-        }
+        //GameObject fox_obj = GameObject.FindGameObjectWithTag("Fox");
+        //if (fox_obj != null)
+        //{
+        //    fox_manage = fox_obj.GetComponent<Fox_manage>();
+        //}
+        Invoke("BoxStart_In", 0.5f);
         boxID
         = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
         + "_" + gameObject.name;
@@ -64,5 +65,14 @@ public class Box_Controller : MonoBehaviour
     public void UIAni_T()
     {
         itemUI.SetBool("show", true);
+    }
+    private void BoxStart_In()
+    {
+        GameObject fox_obj = GameObject.FindGameObjectWithTag("Fox");
+        if (fox_obj != null)
+        {
+            fox_manage = fox_obj.GetComponent<Fox_manage>();
+        }
+        Debug.Log("Å° »ý¼ºµÊ");
     }
 }

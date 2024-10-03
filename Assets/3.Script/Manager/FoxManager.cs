@@ -18,6 +18,8 @@ public class FoxManager : MonoBehaviour
     private bool isHurt = false;
     private bool fromSwordCave; //SwordCave씬 -> World
     private bool fromForestMain; //World -> ForestMain
+    private bool fromForestLeft; //ForestMain -> ForestLeft
+    private bool fromForestLeft_Up;
 
     //스테미너 관련
     public float maxStamina = 40f; //스테미너 최대
@@ -141,9 +143,31 @@ public class FoxManager : MonoBehaviour
             gameObject.transform.position = new Vector3(76.38f, 7.98f, 80.68f);
             fox_Move.canMoveOutNav = true;
             fromForestMain = true;
-            
         }
-    
+        else if (scene.name == "Forest Left" && !fromForestLeft)
+        {
+            gameObject.transform.position = new Vector3(123.21f, 0f, 49.03f);
+            fox_Move.canMoveOutNav = true;
+            fromForestLeft = true;
+        }
+        else if (scene.name == "Forest Main" && fromForestLeft)
+        {
+            fox_Move.canMoveOutNav = true;
+            gameObject.transform.position = new Vector3(124.15f, -4.76f, 46.29f);
+
+        }
+        else if (scene.name == "Forest Left" && !fromForestLeft_Up)
+        {
+            gameObject.transform.position = new Vector3(142.81f, 16f, 48.32f);
+            fox_Move.canMoveOutNav = true;
+            fromForestLeft_Up = true;
+        }
+        else if (scene.name == "Forest Main" && fromForestLeft_Up)
+        {
+            fox_Move.canMoveOutNav = true;
+            gameObject.transform.position = new Vector3(139.99f, 16f, 48.81f);
+        }
+
         //구독 해지
 
     }
@@ -223,6 +247,28 @@ public class FoxManager : MonoBehaviour
             fromForestMain = false;
             //gameObject.transform.position = new Vector3(444.64f, 38f, 105.13f);
         }
+        else if (other.CompareTag("Forest Left"))
+        {
+            SceneManager.LoadScene("Forest Left");
+            fox_Move.canMoveOutNav = false;
+            fromForestLeft = false;
+        }
+        else if (other.CompareTag("Forest Left_Up"))
+        {
+            SceneManager.LoadScene("Forest Left");
+            fox_Move.canMoveOutNav = false;
+            fromForestLeft_Up = false;
+        }
+        else if (other.CompareTag("Forest Left_Main"))
+        {
+            SceneManager.LoadScene("Forest Main");
+            fox_Move.canMoveOutNav = false;
+        }
+        else if (other.CompareTag("Forest Left_Main_Up"))
+        {
+            SceneManager.LoadScene("Forest Main");
+            fox_Move.canMoveOutNav = false;
+        }
 
     }
 
@@ -236,6 +282,7 @@ public class FoxManager : MonoBehaviour
         {
             fox_Move.canMoveOutNav = true;
         }
+
     }
 
 }
