@@ -27,6 +27,7 @@ public class Fox_Move : MonoBehaviour
     private bool isDodgeing = false;
     private bool isDodgeLessing = false;
     private bool isSwing = false;
+    public bool isShield;
     public bool isInput;
     //private bool canRecoverStamina = true;
 
@@ -211,6 +212,18 @@ public class Fox_Move : MonoBehaviour
                 //animator.SetLayerWeight(1, 0.78f);
                 animator.SetBool("isPotion", true);
 
+            }
+
+            //πÊ∆–
+            if (Input.GetKey(KeyCode.K))
+            {
+                animator.SetBool("isShield", true);
+                isShield = true;
+            }
+            else
+            {
+                animator.SetBool("isShield", false);
+                isShield = false;
             }
         }
         else

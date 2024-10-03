@@ -177,21 +177,25 @@ public class FoxManager : MonoBehaviour
     {
         if (other.CompareTag("Monster_Attack"))
         {
-            MonsterController monster_Attack = other.transform.parent.GetComponent<MonsterController>();
-            currentHealth -= monster_Attack.skulData.damage;
-            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-            OnHealthChanged?.Invoke(currentHealth, maxHealth);
-            Debug.Log("현재체력 : " + currentHealth);
-
-            ani.SetTrigger("hurt");
-            isHurt = true;
             Fox_Move fox_Move = GetComponent<Fox_Move>();
-            fox_Move.Hurt_Bool();
-
-            if (currentHealth <= 0)
+            if (!fox_Move.isShield)
             {
-                Die();
+                MonsterController monster_Attack = other.transform.parent.GetComponent<MonsterController>();
+                currentHealth -= monster_Attack.skulData.damage;
+                currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+                OnHealthChanged?.Invoke(currentHealth, maxHealth);
+                Debug.Log("현재체력 : " + currentHealth);
+
+                ani.SetTrigger("hurt");
+                isHurt = true;
+                fox_Move.Hurt_Bool();
+
+                if (currentHealth <= 0)
+                {
+                    Die();
+                }
             }
+            
         }
 
         else if (other.CompareTag("CheckPoint"))
