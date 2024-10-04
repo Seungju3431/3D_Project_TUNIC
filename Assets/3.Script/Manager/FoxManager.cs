@@ -144,7 +144,7 @@ public class FoxManager : MonoBehaviour
             fox_Move.canMoveOutNav = true;
             fromForestMain = true;
         }
-        else if (scene.name == "Forest Left" && !fromForestLeft)
+        else if (scene.name == "Forest Left" && !fromForestLeft && fromForestLeft_Up)
         {
             gameObject.transform.position = new Vector3(123.21f, 0f, 49.03f);
             fox_Move.canMoveOutNav = true;
@@ -156,7 +156,7 @@ public class FoxManager : MonoBehaviour
             gameObject.transform.position = new Vector3(124.15f, -4.76f, 46.29f);
 
         }
-        else if (scene.name == "Forest Left" && !fromForestLeft_Up)
+        else if (scene.name == "Forest Left" && !fromForestLeft_Up && fromForestLeft)
         {
             gameObject.transform.position = new Vector3(142.81f, 16f, 48.32f);
             fox_Move.canMoveOutNav = true;

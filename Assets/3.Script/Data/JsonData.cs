@@ -59,3 +59,16 @@ public class DoorDataList
 {
     public List<DoorStateData> doorDataList = new List<DoorStateData>();
 }
+
+[System.Serializable]
+public class MonsterStateData
+{
+    public string monsterID;
+    public bool isDie;
+}
+
+[System.Serializable]
+public class MonsterDataList
+{
+    public List<MonsterStateData> monsterDataList = new List<MonsterStateData>();
+}

@@ -7,8 +7,9 @@ public class MonsterController : MonoBehaviour
 {
     public SkulSo skulData;
 
-    public GameObject fx_Hit = null;
-    private Transform target;
+    public GameObject fx_Hit;
+    //private Transform target;
+    public Transform target;
     
     private bool isHurting;
     private bool isAttacking;
@@ -19,21 +20,23 @@ public class MonsterController : MonoBehaviour
     private Coroutine controll_co_A = null; //Attack
     private Animator ani;
     private NavMeshAgent nav;
-
+    private Fox_manage fox_manage;
 
 
 
     private void Awake()
     {
-        GameObject fox = GameObject.FindGameObjectWithTag("Fox");
-        if (fox != null)
-        {
-            target = fox.transform;
-        }
-        else
-        {
-            Debug.Log("fox못찾음");
-        }
+        //GameObject fox = GameObject.FindGameObjectWithTag("Fox");
+        //if (fox != null)
+        //{
+        //    target = fox.transform;
+        //}
+        //else
+        //{
+        //    Debug.Log("fox못찾음");
+        //}
+        target = transform.GetChild(0);
+        Invoke("Find_Fox", 0.5f);
         ani = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
     }
@@ -41,7 +44,8 @@ public class MonsterController : MonoBehaviour
     {
         isHurting = false;
         isAttacking = false;
-        controll_co_F = StartCoroutine(Find_co());
+        //controll_co_F = StartCoroutine(Find_co());
+        Invoke("Start_MonsterMove", 0.5f);
 
     }
 
@@ -260,7 +264,30 @@ public class MonsterController : MonoBehaviour
         controll_co_F = StartCoroutine(Find_co());
     }
 
-    
+    private void Find_Fox()
+    {
+        GameObject fox_obj = GameObject.FindGameObjectWithTag("Fox");
+        if (fox_obj != null)
+        {
+            fox_manage = fox_obj.GetComponent<Fox_manage>();
+        }
+        Debug.Log("키 생성됨");
+        GameObject fox = GameObject.FindGameObjectWithTag("Fox");
+        if (fox != null)
+        {
+            target = fox.transform;
+        }
+        else
+        {
+            Debug.Log("fox못찾음");
+        }
+        
+    }
+
+    private void Start_MonsterMove()
+    {
+        controll_co_F = StartCoroutine(Find_co());
+    }
     ////피격
     //private void OnCollisionEnter(Collision collision)
     //{

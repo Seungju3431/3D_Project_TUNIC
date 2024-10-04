@@ -12,6 +12,9 @@ public class StateManager : MonoBehaviour
     public BoxDataList boxDataList;
     public DoorDataList doorDataList;
 
+    public MonsterDataList monsterDataList;
+    private string filePath_monster;
+
     private void Awake()
     {
         if (instance == null)
@@ -25,6 +28,7 @@ public class StateManager : MonoBehaviour
         }
         filePath = Application.persistentDataPath + "/boxData.json";
         filePath_door = Application.persistentDataPath + "/doorData.json";
+        filePath_monster = Application.persistentDataPath + "monsterData.json";
         //LoadBoxData();
     }
     public void SaveBoxData()
@@ -95,5 +99,47 @@ public class StateManager : MonoBehaviour
     {
         DoorStateData door = doorDataList.doorDataList.Find(d => d.doorID == doorID);
         return door != null && door.isOpen_Door;
+    }
+
+    public void SaveMonsterData()
+    {
+        string jsonData = JsonMapper.ToJson(monsterDataList);
+        File.WriteAllText(filePath_monster, jsonData);
+        Debug.Log("몬스터 세이브");
+    }
+
+    public void LoadMonsterData()
+    {
+        if (File.Exists(filePath_monster))
+        {
+            string jsonData = File.ReadAllText(filePath_monster);
+            monsterDataList = JsonMapper.ToObject<MonsterDataList>(jsonData);
+            Debug.Log("몬스터 데이터 로드");
+        }
+        else
+        {
+            monsterDataList = new MonsterDataList();
+        }
+    }
+
+    public void UpdateMonsterState(string monsterID, bool isDie)
+    { 
+    MonsterStateData monster = monsterDataList.monsterDataList.Find(m => m.monsterID == monsterID);
+        if (monster == null)
+        {
+            monster = new MonsterStateData { monsterID = monsterID, isDie = isDie };
+            monsterDataList.monsterDataList.Add(monster);
+        }
+        else
+        {
+            monster.isDie = isDie;
+        }
+        SaveMonsterData();
+    }
+
+    public bool GetMonsterState(string monsterID)
+    { 
+    MonsterStateData monster = monsterDataList.monsterDataList.Find(m => m.monsterID == monsterID);
+        return monster != null && monster.isDie;
     }
 }
