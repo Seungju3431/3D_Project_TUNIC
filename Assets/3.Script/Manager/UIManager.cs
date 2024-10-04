@@ -18,7 +18,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject swordImage;
     [SerializeField] private GameObject keyImage;
 
-
+    public bool hasSword;
+    public bool hasShield;
+    public bool hasPotion;
 
 
     private void Awake()
@@ -50,6 +52,7 @@ public class UIManager : MonoBehaviour
 
 
         }
+        UpdateInventoryUI();
     }
 
     private void OnDestroy()
@@ -92,6 +95,7 @@ public class UIManager : MonoBehaviour
     public void UpdateItemUI(string itemName)
     {
         Debug.Log("UpdateItemUI");
+        
         switch (itemName)
         {
             case "Sword":
@@ -109,6 +113,43 @@ public class UIManager : MonoBehaviour
                 break;
         }
     }
+
+    private void UpdateInventoryUI()
+    {
+        if (InventoryManager.instance != null)
+        {
+            hasSword = InventoryManager.instance.hasSword;
+            hasShield = InventoryManager.instance.hasShield;
+            hasPotion = InventoryManager.instance.hasPotion;
+
+            UpdateItemUI("Sword");
+            UpdateItemUI("Shield");
+            UpdatePotionUI(hasPotion);
+
+            Fox_Move foxMove = FindObjectOfType<Fox_Move>();
+            if (foxMove != null)
+            {
+                if (hasSword)
+                {
+                    foxMove.ActiveSword(); // 검 활성화
+                }
+                //else
+                //{
+                //    foxMove.ActiveSword_F();
+                //}
+
+                if (hasShield)
+                {
+                    foxMove.ActiveShield(); // 방패 활성화
+                }
+                //else
+                //{
+                //    foxMove.ActiveShield_F();
+                //}
+            }
+        }
+    }
+    
 
     
 }

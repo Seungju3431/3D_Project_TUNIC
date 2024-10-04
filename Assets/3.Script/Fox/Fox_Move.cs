@@ -376,9 +376,17 @@ public class Fox_Move : MonoBehaviour
     {
         Sword.SetActive(true);
     }
+    //public void ActiveSword_F()
+    //{
+    //    Sword.SetActive(false);
+    //}
     public void ActiveShield()
     {
         Shield.SetActive(true);
     }
+    //public void ActiveShield_F()
+    //{
+    //    Shield.SetActive(false);
+    //}
 
 }

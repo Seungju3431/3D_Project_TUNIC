@@ -1716,6 +1716,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItems: []
+  hasSword: 0
+  hasShield: 0
+  hasPotion: 0
 --- !u!4 &6118458763882979242
 Transform:
   m_ObjectHideFlags: 0
@@ -4167,6 +4170,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxDataList:
     boxDataList: []
+  doorDataList:
+    doorDataList: []
+  monsterDataList:
+    monsterDataList: []
 --- !u!1 &6983846970691805776
 GameObject:
   m_ObjectHideFlags: 0

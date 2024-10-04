@@ -35,7 +35,9 @@ public class MonsterController : MonoBehaviour
         //{
         //    Debug.Log("fox¸øÃ£À½");
         //}
-        target = transform.GetChild(0);
+
+        fx_Hit = transform.GetChild(0).gameObject;
+
         Invoke("Find_Fox", 0.5f);
         ani = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();

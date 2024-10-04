@@ -72,5 +72,6 @@ public class TitleUI : MonoBehaviour
         SaveSystem.Instance.LoadGame();
         StateManager.instance.LoadBoxData();
         InventoryManager.instance.LoadInventory();
+        
     }
 }

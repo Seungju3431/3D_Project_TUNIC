@@ -27,8 +27,9 @@ public class InventoryManager : MonoBehaviour
         }
 
         filePath = Application.persistentDataPath + "/inventoryData.json";
-        //LoadInventory();
-    }
+    
+    //LoadInventory();
+}
 
     public void LoadInventory()
     {
@@ -43,7 +44,7 @@ public class InventoryManager : MonoBehaviour
             hasShield = inventoryItems.Contains("Shield");
             hasPotion = inventoryItems.Contains("Potion");
 
-            
+            UpdateInventoryUI();
         }
         else
         {
@@ -109,5 +110,22 @@ public class InventoryManager : MonoBehaviour
         //    }
         //}
     }
-        
+    private void UpdateInventoryUI()
+    {
+        if (UIManager.Instance != null)
+        {
+            if (hasSword)
+            {
+                UIManager.Instance.UpdateItemUI("Sword");
+            }
+            if (hasShield)
+            {
+                UIManager.Instance.UpdateItemUI("Shield");
+            }
+            if (hasPotion)
+            {
+                UIManager.Instance.UpdatePotionUI(hasPotion);
+            }
+        }
+    }
 }

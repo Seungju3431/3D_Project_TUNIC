@@ -5,9 +5,9 @@ using UnityEngine;
 public class FoxSpawner : MonoBehaviour
 {
     public GameObject foxPrefab;
-    public GameObject spacebar;
+    //public GameObject spacebar;
     public Transform spawnPoint;
-    public MonsterSpawner monsterSpawner;
+    //public MonsterSpawner monsterSpawner;
     public CinemachineController virtualCamera;
 
     private void Start()
@@ -24,10 +24,10 @@ public class FoxSpawner : MonoBehaviour
         GameObject obj = Instantiate(foxPrefab, spawnPoint.position, spawnPoint.rotation);
         obj.GetComponent<Fox_Move>().Initialize();
         Fox_manage foxmanage = obj.GetComponent<Fox_manage>();
-        if (foxmanage != null)
-        {
-            foxmanage.SetSpacebar(spacebar);
-        }
+        //if (foxmanage != null)
+        //{
+        //    foxmanage.SetSpacebar(spacebar);
+        //}
         if (virtualCamera != null)
         {
             
@@ -36,15 +36,15 @@ public class FoxSpawner : MonoBehaviour
        // OnFoxSpawned();
     }
 
-    private void OnFoxSpawned()
-    {
-        if (monsterSpawner != null)
-        {
-            monsterSpawner.SpawnMonster();
-        }
-        else
-        {
-            Debug.LogWarning("MonsterSpawner가 설정되지 않았습니다.");
-        }
-    }
+    //private void OnFoxSpawned()
+    //{
+    //    if (monsterSpawner != null)
+    //    {
+    //        monsterSpawner.SpawnMonster();
+    //    }
+    //    else
+    //    {
+    //        Debug.LogWarning("MonsterSpawner가 설정되지 않았습니다.");
+    //    }
+    //}
 }

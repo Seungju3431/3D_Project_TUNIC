@@ -52,7 +52,6 @@ public class Fox_manage : MonoBehaviour
     private void Awake()
     {
         
-        Spacebar = GameObject.FindGameObjectWithTag("Spacebar");
         fox_Move = GetComponent<Fox_Move>();
         rb = GetComponent<Rigidbody>();
         ani = GetComponent<Animator>();
@@ -316,8 +315,8 @@ public class Fox_manage : MonoBehaviour
 
                 Animator space_ani = Spacebar.GetComponent<Animator>();
                 ladder_Pcol = other;
-                Spacebar.transform.position = Camera.main.WorldToScreenPoint(other.transform.position + Vector3.up * 2f);
                 Spacebar.SetActive(true);
+                Spacebar.transform.position = Camera.main.WorldToScreenPoint(other.transform.position + Vector3.up * 2f);
                 space_ani.SetTrigger("spacebar_Start");
                 isInteraction = true;
                 //»ç´Ù¸®_UP
@@ -492,4 +491,6 @@ public class Fox_manage : MonoBehaviour
         //    isKeyDoor = false;
         //}
     }
+
+    
 }
