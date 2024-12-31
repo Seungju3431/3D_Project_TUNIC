@@ -51,8 +51,8 @@ public class UIManager : MonoBehaviour
             UpdateStaminaUI(FoxManager.Instance.nowStamina, FoxManager.Instance.maxStamina);
 
 
+        //UpdateInventoryUI();
         }
-        UpdateInventoryUI();
     }
 
     private void OnDestroy()
